@@ -1,0 +1,26 @@
+.wrapper {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-base);
+  width: 100%;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  bottom: -30%;
+  align-items: "center";
+  justify-content: space-between;
+  z-index: 100;
+}
+.logoWrapper {
+  width: 70px;
+  height: 70px;
+}
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.right {
+  display: flex;
+  align-items: center;
+}

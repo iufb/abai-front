@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+label {
+  font-weight: bold;
+}
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --color-primary: #5d2c2c;
+  --color-base: #fefefe;
+  --color-secondary: #d7907b;
+  --color-gray: #ced4da;
+  background-color: var(--color-base);
+}
