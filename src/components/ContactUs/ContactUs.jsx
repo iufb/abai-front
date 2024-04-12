@@ -5,8 +5,9 @@ import { Input } from "../Input/Input";
 import { Radio } from "../Radio/Radio";
 import { Section } from "../Section/Section";
 import styles from "./ContactUs.module.css";
+import { supabase } from "../../supabase";
+import { uploadFile } from "../../utils";
 
-import emailjs from "emailjs-com";
 export const ContactUs = () => {
   return (
     <Section id="form">
@@ -41,42 +42,44 @@ const Form = () => {
   const [parent, setParent] = useState("");
   const [tel, setTel] = useState("");
   const [parentEmail, setParentEmail] = useState("");
-  const [child, setChild] = useState("");
-  const [childBirthdate, setChildBirthdate] = useState("");
+  const [student, setStudent] = useState("");
+  const [birthDate, setBirthDate] = useState("");
   const [school, setSchool] = useState("");
-  // const [file, setFile] = useState(null);
+  const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
-  const handleSubmit = (e) => {
+  const [error, setError] = useState("");
+  const [notification, setNotification] = useState("");
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+
+    setFile(selectedFile);
+  };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
-    const serviceId = "service_ymietrq";
-    const templateId = "template_ub6u2ze";
-    const userId = "_ulp73tGQE89ARPVl";
-
-    const emailParams = {
+    setError("");
+    setNotification("");
+    const fileUrl = await uploadFile(file, parentEmail);
+    const params = {
       parent,
-      parentEmail,
+      email: parentEmail,
       tel,
-      child,
-      childBirthdate,
+      student,
+      birthdate: birthDate,
       sources: sourcesState.join(","),
       school,
-      lang,
-      nextClass,
+      language: lang,
+      class: nextClass,
+      files: fileUrl ? [fileUrl] : null,
     };
+    const { error } = await supabase.from("application").insert(params);
+    if (error) {
+      setError("Ошибка! Что-то пошло не так.");
+    } else {
+      setNotification("Ваша заявка отправлена!");
+    }
 
-    emailjs.send(serviceId, templateId, emailParams, userId).then(
-      (result) => {
-        console.log(result);
-        setLoading(false);
-      },
-      (error) => {
-        console.log(error);
-
-        setLoading(false);
-      },
-    );
+    setLoading(false);
   };
   const sourcesOnChange = (e) => {
     if (sourcesState.findIndex((source) => source === e.target.value) !== -1) {
@@ -95,23 +98,27 @@ const Form = () => {
           <Input
             label={"ФИО родителя"}
             value={parent}
+            required
             onChange={(e) => setParent(e.target.value)}
           />
           <Input
             label={"Номер мобильного телефона родителя"}
             type="tel"
             value={tel}
+            required
             onChange={(e) => setTel(e.target.value)}
           />
           <Input
             label={"Адрес электронной почты родителя"}
             value={parentEmail}
+            required
             onChange={(e) => setParentEmail(e.target.value)}
           />
           <Input
             label={"ФИО ребенка"}
-            value={child}
-            onChange={(e) => setChild(e.target.value)}
+            required
+            value={student}
+            onChange={(e) => setStudent(e.target.value)}
           />
           <div className={styles.selectWrapper}>
             <span>Язык обучения в текущей школе:</span>
@@ -128,13 +135,15 @@ const Form = () => {
           <Input
             label={"Дата рождения ребенка"}
             type="date"
-            value={childBirthdate}
-            onChange={(e) => setChildBirthdate(e.target.value)}
+            required
+            value={birthDate}
+            onChange={(e) => setBirthDate(e.target.value)}
           />
           <Input
             label={
               "В какой школе ребёнок обучается сейчас? (Укажите название и город)"
             }
+            required
             value={school}
             onChange={(e) => setSchool(e.target.value)}
           />
@@ -166,15 +175,16 @@ const Form = () => {
               />
             ))}
           </div>
-          {/* <Input */}
-          {/*   label={"Прикрепите файлы проектов, олимпиад"} */}
-          {/*   type="file" */}
-          {/*   value={file} */}
-          {/*   onChange={(e) => setFile(e.target.files[0])} */}
-          {/* /> */}
+          <Input
+            label={"Прикрепите файлы проектов, олимпиад"}
+            type="file"
+            onChange={handleFileChange}
+          />
         </div>
       </div>
-      <Button type="submit" variant={"primary"}>
+      {error && <span className="error">{error}</span>}
+      {notification && <span className="success">{notification}</span>}
+      <Button disabled={loading} type="submit" variant={"primary"}>
         {loading ? "Oтправляем" : "Отправить"}
       </Button>
     </form>

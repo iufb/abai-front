@@ -1,17 +1,8 @@
-/* .button { */
-/*   width: auto; */
-/*   height: 45px; */
-/*   border-radius: 10px; */
-/*   font-size: 1 auto6px; */
-/*   padding: 8px 5px; */
-/*   display: flex; */
-/*   align-items: center; */
-/*   justify-content: center; */
-/*   font-weight: 600; */
-/* } */
-.button:hover {
+.button:hover,
+button:disabled {
   opacity: 80%;
 }
+
 .primary {
   background-color: var(--color-secondary);
   color: var(--color-base);

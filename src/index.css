@@ -11,7 +11,12 @@ button {
 a {
   text-decoration: none;
 }
-
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
 label {
   font-weight: bold;
 }
