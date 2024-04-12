@@ -4,6 +4,8 @@ import styles from "./Navbar.module.css";
 
 import logo from "/ais-logo-rs.png";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
+import { BurgerButton } from "../BurgerButton/BurgerButton";
 export const Navbar = () => {
   return (
     <nav className={styles.wrapper}>
@@ -12,10 +14,28 @@ export const Navbar = () => {
       </div>
       <div className={styles.right}>
         <LanguageSwitcher />
-        <Button isLink={true} href="#form" variant="primary">
+        <Button
+          isLink={true}
+          href="#form"
+          variant="primary"
+          className={styles.applicationBtn}
+        >
           Оставить заявку
         </Button>
       </div>
+      <BurgerButton className={styles.burger}>
+        <div className={styles.right}>
+          <LanguageSwitcher />
+          <Button
+            isLink={true}
+            href="#form"
+            variant="primary"
+            className={styles.applicationBtn}
+          >
+            Оставить заявку
+          </Button>
+        </div>
+      </BurgerButton>
     </nav>
   );
 };

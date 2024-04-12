@@ -11,11 +11,23 @@ button {
 a {
   text-decoration: none;
 }
+.noScroll {
+  overflow: hidden;
+}
+.error,
+.success {
+  overflow: hidden;
+  min-height: 20px;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+}
 .error {
-  color: red;
+  color: #d8000c;
+  background-color: #ffbaba;
 }
 .success {
-  color: green;
+  color: #270;
+  background-color: #dff2bf;
 }
 label {
   font-weight: bold;
