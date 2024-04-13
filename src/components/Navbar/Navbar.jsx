@@ -8,22 +8,11 @@ import clsx from "clsx";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 export const Navbar = () => {
   return (
-    <nav className={styles.wrapper}>
-      <div className={styles.logoWrapper}>
-        <img src={logo} alt="Ais logo" className={styles.logo} />
-      </div>
-      <div className={styles.right}>
-        <LanguageSwitcher />
-        <Button
-          isLink={true}
-          href="#form"
-          variant="primary"
-          className={styles.applicationBtn}
-        >
-          Оставить заявку
-        </Button>
-      </div>
-      <BurgerButton className={styles.burger}>
+    <header className={styles.wrapper}>
+      <nav className={styles.nav}>
+        <div className={styles.logoWrapper}>
+          <img src={logo} alt="Ais logo" className={styles.logo} />
+        </div>
         <div className={styles.right}>
           <LanguageSwitcher />
           <Button
@@ -35,8 +24,21 @@ export const Navbar = () => {
             Оставить заявку
           </Button>
         </div>
-      </BurgerButton>
-    </nav>
+        <BurgerButton className={styles.burger}>
+          <div className={styles.right}>
+            <LanguageSwitcher />
+            <Button
+              isLink={true}
+              href="#form"
+              variant="primary"
+              className={styles.applicationBtn}
+            >
+              Оставить заявку
+            </Button>
+          </div>
+        </BurgerButton>
+      </nav>
+    </header>
   );
 };
 

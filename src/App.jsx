@@ -1,11 +1,12 @@
 import "./App.css";
-import { ContactUs, Hero, Navbar } from "./components";
+import { About, ContactUs, Hero, Navbar } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
+      <About />
       <ContactUs />
     </>
   );

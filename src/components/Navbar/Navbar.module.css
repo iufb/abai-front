@@ -1,16 +1,22 @@
 .wrapper {
   position: sticky;
+
   top: 0;
   background-color: var(--color-base);
   width: 100%;
-  display: flex;
   padding-top: 5px;
   padding-bottom: 5px;
   bottom: -30%;
-  justify-content: space-between;
+
+  z-index: 100;
+}
+.nav {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
 
   align-items: center;
-  z-index: 100;
+  justify-content: space-between;
 }
 .applicationBtn {
   display: block;

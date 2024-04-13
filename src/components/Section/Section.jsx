@@ -1,7 +1,8 @@
+import clsx from "clsx";
 import styles from "./Section.module.css";
-export const Section = ({ children, ...props }) => {
+export const Section = ({ className, children, ...props }) => {
   return (
-    <section className={styles.section} {...props}>
+    <section className={clsx(styles.section, className)} {...props}>
       {children}
     </section>
   );
