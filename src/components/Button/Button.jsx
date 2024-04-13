@@ -7,7 +7,7 @@ export const Button = ({ isLink, variant, children, className, ...props }) => {
       className={clsx(
         className,
         styles.button,
-        { primary: styles.primary }[variant],
+        { primary: styles.primary, outline: styles.outline }[variant],
       )}
       {...props}
     >

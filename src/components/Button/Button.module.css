@@ -2,23 +2,27 @@
 button:disabled {
   opacity: 80%;
 }
+.button {
+  cursor: pointer;
+}
 
 .primary {
   background-color: var(--color-secondary);
   color: var(--color-base);
-  border: none;
 }
 .primary:after {
   background-color: var(--color-primary);
 }
 .outline {
   background-color: inherit;
-  border: 1px solid var(--color-secondary);
-  color: var(--color-secondary);
+  border: 2px solid var(--color-base);
+  padding: 10px 15px;
+  color: var(--color-base);
+  font-weight: bold;
 }
-.button {
-  appearance: button;
+.primary {
   border: solid transparent;
+  appearance: button;
   border-radius: 16px;
   border-width: 0 0 4px;
   box-sizing: border-box;
@@ -45,7 +49,7 @@ button:disabled {
   width: 100%;
 }
 
-.button:after {
+.primary:after {
   background-clip: padding-box;
   border: solid transparent;
   border-radius: 16px;
@@ -59,21 +63,21 @@ button:disabled {
   z-index: -1;
 }
 
-.button:main,
+.primary:main,
 .button:focus {
   user-select: auto;
 }
 
-.button:hover:not(:disabled) {
+.primary:hover:not(:disabled) {
   filter: brightness(1.1);
   -webkit-filter: brightness(1.1);
 }
 
-.button:disabled {
+.primary:disabled {
   cursor: auto;
 }
 
-.button:active {
+.primary:active {
   border-width: 4px 0 0;
   background: none;
 }

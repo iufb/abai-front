@@ -27,10 +27,11 @@
   margin-top: 20px;
 }
 .factorWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  min-height: 500px;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+  margin-right: 12px;
 }
 .factor {
   display: flex;
@@ -53,15 +54,6 @@
 .second p,
 .third p {
   margin-top: 40px;
-}
-.first {
-  align-self: flex-start;
-}
-.second {
-  align-self: center;
-}
-.third {
-  align-self: flex-end;
 }
 .end {
   text-align: center;
@@ -88,12 +80,6 @@
   -moz-text-fill-color: transparent;
 }
 
-@media screen and (max-width: 1100px) {
-  .factorWrapper {
-    grid-template-columns: 1fr;
-    min-height: 100%;
-  }
-}
 @media screen and (max-width: 826px) {
   .left {
     flex: 0;

@@ -5,13 +5,13 @@ export const Text = ({ tag, variant, className, children, ...props }) => {
   return (
     <Component
       className={clsx(
-        className,
         {
           title: styles.title,
           subtitle: styles.subtitle,
           p: styles.p,
           span: styles.span,
         }[variant],
+        className,
       )}
       {...props}
     >

@@ -1,0 +1,57 @@
+.wrapper {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.programWrapper {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.program {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  padding: 10px;
+  flex: 1;
+
+  color: var(--color-base);
+}
+.program h1 {
+  color: var(--color-base);
+  font-weight: bold;
+}
+.list {
+  list-style-type: circle;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.imgWrapper {
+  width: 60px;
+  height: 60px;
+}
+.imgWrapper > img {
+  width: 100%;
+  height: 100%;
+}
+.go {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/bg.png");
+}
+.go h1 {
+  color: var(--color-base);
+  text-align: center;
+}
