@@ -79,7 +79,17 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
+.numbers {
+  width: 100px;
+  height: 100px;
+}
 
+@media screen and (max-width: 450px) {
+  .numbers {
+    width: 80px;
+    height: 80px;
+  }
+}
 @media screen and (max-width: 826px) {
   .left {
     flex: 0;

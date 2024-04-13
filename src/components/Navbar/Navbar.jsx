@@ -2,10 +2,9 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button";
 import styles from "./Navbar.module.css";
 
-import logo from "/ais-logo-rs.png";
 import { useEffect, useState } from "react";
-import clsx from "clsx";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
+import logo from "/ais-logo-rs.png";
 export const Navbar = () => {
   return (
     <header className={styles.wrapper}>

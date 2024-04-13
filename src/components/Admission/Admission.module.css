@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.wrapper h1 {
+  margin-bottom: 20px;
+}
+.tab {
+  color: var(--color-primary);
+  background-color: var(--color-gray);
+  border: none;
+  font-size: 23px;
+  padding: 10px 15px;
+  transition: color 0.3s ease-out;
+}
+
+.active {
+  background-color: var(--color-primary);
+  color: var(--color-base);
+  -webkit-transition: background-color 200ms linear;
+  -ms-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+.firstTab {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.firstTab h4 {
+  text-align: center;
+}
+.selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.selectionStep {
+  padding: 10px;
+  text-align: center;
+}
+
+.dots {
+  width: 55%;
+  left: 50%;
+  z-index: -20;
+  opacity: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-top: none;
+  border-bottom: 5px dotted black;
+  position: absolute;
+}
+.appear {
+  animation: fadeIn 1s;
+}
+.hint {
+  background-color: var(--color-gray);
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+.hint h3 {
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 740px) {
+  .selection {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .dots {
+    display: none;
+  }
+}
+@media screen and (max-width: 532px) {
+  .tab {
+    font-size: 16px;
+    padding: 10px 3px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

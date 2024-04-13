@@ -1,14 +1,26 @@
 import "./App.css";
-import { About, ContactUs, Hero, Navbar, Programs } from "./components";
+import {
+  About,
+  Admission,
+  ContactUs,
+  Hero,
+  Navbar,
+  Programs,
+  Partners,
+} from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Programs />
-      <ContactUs />
+      <section className="rootContent">
+        <Hero />
+        <About />
+        <Programs />
+        <Admission />
+        <ContactUs />
+        <Partners />
+      </section>
     </>
   );
 }

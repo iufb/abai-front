@@ -7,13 +7,16 @@ import { Section } from "../Section/Section";
 import styles from "./ContactUs.module.css";
 import { supabase } from "../../supabase";
 import { uploadFile } from "../../utils";
+import { useTranslation } from "react-i18next";
 
 export const ContactUs = () => {
   return (
     <Section id="form">
       <section className={styles.wrapper}>
-        <div className={styles.bg}>ContactUs</div>
-        <Form />
+        <div className={styles.bg}>
+          ContactUs
+          <Form />
+        </div>
       </section>
     </Section>
   );
@@ -36,6 +39,7 @@ const sources = [
   "Проходили / проезжали мимо",
 ];
 const Form = () => {
+  const { t } = useTranslation();
   const [lang, setLang] = useState(languages[0]);
   const [nextClass, setNextClass] = useState(classes[0]);
   const [sourcesState, setSourcesState] = useState([]);
@@ -44,6 +48,7 @@ const Form = () => {
   const [parentEmail, setParentEmail] = useState("");
   const [student, setStudent] = useState("");
   const [birthDate, setBirthDate] = useState("");
+  const [achievements, setAchievements] = useState("");
   const [school, setSchool] = useState("");
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -68,15 +73,16 @@ const Form = () => {
       birthdate: birthDate,
       sources: sourcesState.join(","),
       school,
+      achievements,
       language: lang,
       class: nextClass,
       files: fileUrl ? [fileUrl] : null,
     };
     const { error } = await supabase.from("application").insert(params);
     if (error) {
-      setError("Ошибка! Что-то пошло не так.");
+      setError(t("form.error"));
     } else {
-      setNotification("Ваша заявка отправлена!");
+      setNotification(t("form.notification"));
     }
 
     setLoading(false);
@@ -96,32 +102,32 @@ const Form = () => {
       <div className={styles.formContent}>
         <div className={styles.formLeft}>
           <Input
-            label={"ФИО родителя"}
+            label={t("form.parent")}
             value={parent}
             required
             onChange={(e) => setParent(e.target.value)}
           />
           <Input
-            label={"Номер мобильного телефона родителя"}
+            label={t("form.tel")}
             type="tel"
             value={tel}
             required
             onChange={(e) => setTel(e.target.value)}
           />
           <Input
-            label={"Адрес электронной почты родителя"}
+            label={t("form.email")}
             value={parentEmail}
             required
             onChange={(e) => setParentEmail(e.target.value)}
           />
           <Input
-            label={"ФИО ребенка"}
+            label={t("form.child")}
             required
             value={student}
             onChange={(e) => setStudent(e.target.value)}
           />
           <div className={styles.selectWrapper}>
-            <span>Язык обучения в текущей школе:</span>
+            <span>{t("form.lang")}</span>
             {languages.map((l) => (
               <Radio
                 key={l}
@@ -131,18 +137,22 @@ const Form = () => {
                 onChange={(e) => setLang(e.target.value)}
               />
             ))}
+            <Input
+              label={t("form.achievements")}
+              required
+              value={achievements}
+              onChange={(e) => setAchievements(e.target.value)}
+            />
           </div>
           <Input
-            label={"Дата рождения ребенка"}
+            label={t("form.birthdate")}
             type="date"
             required
             value={birthDate}
             onChange={(e) => setBirthDate(e.target.value)}
           />
           <Input
-            label={
-              "В какой школе ребёнок обучается сейчас? (Укажите название и город)"
-            }
+            label={t("form.school")}
             required
             value={school}
             onChange={(e) => setSchool(e.target.value)}
@@ -150,7 +160,7 @@ const Form = () => {
         </div>
         <div className={styles.formRight}>
           <div className={styles.selectWrapper}>
-            <span>В какой класс поступает ребенок?</span>
+            <span>{t("form.nextclass")}</span>
             {classes.map((c) => (
               <Radio
                 key={c}
@@ -162,7 +172,7 @@ const Form = () => {
             ))}
           </div>
           <div className={styles.selectWrapper}>
-            <span>Как Вы узнали о нас?</span>
+            <span>{t("form.sources")}</span>
             {sources.map((s) => (
               <Checkbox
                 key={s}
@@ -175,8 +185,9 @@ const Form = () => {
               />
             ))}
           </div>
+
           <Input
-            label={"Прикрепите файлы проектов, олимпиад"}
+            label={t("form.docs")}
             type="file"
             onChange={handleFileChange}
           />
@@ -185,7 +196,7 @@ const Form = () => {
       {error && <span className="error">{error}</span>}
       {notification && <span className="success">{notification}</span>}
       <Button disabled={loading} type="submit" variant={"primary"}>
-        {loading ? "Oтправляем" : "Отправить"}
+        {loading ? t("buttons.form.loading") : t("buttons.form.base")}
       </Button>
     </form>
   );

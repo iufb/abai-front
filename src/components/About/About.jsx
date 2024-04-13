@@ -59,7 +59,11 @@ const Factor = ({ t, variant }) => {
         ],
       )}
     >
-      <img src={{ first, second, third }[variant]} width={100} height={100} />
+      <img
+        src={{ first, second, third }[variant]}
+        alt={variant}
+        className={styles.numbers}
+      />
       <Text tag="p" variant={"p"}>
         {t(`factors.${variant}`)}
       </Text>

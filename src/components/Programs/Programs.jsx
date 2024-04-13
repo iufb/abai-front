@@ -7,7 +7,6 @@ import { Section } from "../Section/Section";
 import { Button } from "../Button/Button";
 export const Programs = () => {
   const { t } = useTranslation();
-  console.log(Array.from(t(`program.junior.content`)));
 
   return (
     <Section fullHeight className={styles.wrapper}>
@@ -32,7 +31,7 @@ const Program = ({ t, variant }) => (
       </Text>
       <ul className={styles.list}>
         {t(`program.${variant}.content`, { returnObjects: true }).map((c) => (
-          <li>{c}</li>
+          <li key={c}>{c}</li>
         ))}
       </ul>
     </section>

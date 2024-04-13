@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 1280px) {
-  #root {
+  .rootContent {
     padding-left: 20px;
     padding-right: 20px;
   }
