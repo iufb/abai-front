@@ -4,5 +4,6 @@ export { Hero } from "./Hero/Hero";
 export { About } from "./About/About";
 export { Admission } from "./Admission/Admission";
 export { Programs } from "./Programs/Programs";
+export { Footer } from "./Footer/Footer";
 export { Partners } from "./Partners/Partners";
 export { ContactUs } from "./ContactUs/ContactUs";

@@ -15,7 +15,7 @@ export const About = () => {
           <Text tag="h1" variant={"title"}>
             {t("about.title")}
           </Text>
-          <Text tag="h4" variant={"subtitle"}>
+          <Text tag="h4" variant={"subtitle"} color="secondary">
             {t("about.subtitle")}
           </Text>
           <Text tag="p" variant={"p"}>
@@ -34,7 +34,7 @@ export const About = () => {
         </section>
       </section>
       <section className={styles.bottom}>
-        <Text tag="h4" variant={"subtitle"}>
+        <Text tag="h4" variant={"subtitle"} color="secondary">
           {t("factors.title")}
         </Text>
         <section className={styles.factorWrapper}>

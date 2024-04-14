@@ -26,7 +26,7 @@ export const Programs = () => {
 const Program = ({ t, variant }) => (
   <section className={styles.program}>
     <section>
-      <Text tag="h1" variant={"subtitle"}>
+      <Text tag="h1" variant={"subtitle"} color="base">
         {t(`program.${variant}.title`)}
       </Text>
       <ul className={styles.list}>
@@ -44,7 +44,7 @@ const Program = ({ t, variant }) => (
 const GoSection = ({ t }) => {
   return (
     <section className={styles.go}>
-      <Text tag="h1" variant={"title"}>
+      <Text tag="h1" variant={"title"} color="base">
         {t(`go`)}
       </Text>
       <Button isLink variant={"outline"}>

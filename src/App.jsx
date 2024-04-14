@@ -7,20 +7,22 @@ import {
   Navbar,
   Programs,
   Partners,
+  Footer,
 } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
-      <section className="rootContent">
+      <main className="rootContent">
         <Hero />
         <About />
         <Programs />
         <Admission />
         <ContactUs />
         <Partners />
-      </section>
+      </main>
+      <Footer />
     </>
   );
 }

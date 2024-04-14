@@ -1,12 +1,22 @@
 .title {
   font-size: 36px;
   margin: 20px 0;
-  color: var(--color-primary);
   font-weight: bold;
 }
 .subtitle {
   font-size: 24px;
+}
+.subsubtitle {
+  font-size: 20px;
+}
+.primary {
+  color: var(--color-primary);
+}
+.secondary {
   color: var(--color-secondary);
+}
+.base {
+  color: var(--color-base);
 }
 .p {
   font-size: 20px;
@@ -21,6 +31,9 @@
   }
   .subtitle {
     font-size: 20px;
+  }
+  .subsubtitle {
+    font-size: 18;
   }
   .p {
     font-size: 16px;

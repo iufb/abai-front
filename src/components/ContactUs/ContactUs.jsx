@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 export const ContactUs = () => {
   return (
-    <Section id="form">
+    <Section id="form" className={styles.container}>
       <section className={styles.wrapper}>
         <div className={styles.bg}>
           ContactUs

@@ -20,7 +20,6 @@
   color: var(--color-base);
 }
 .program h1 {
-  color: var(--color-base);
   font-weight: bold;
 }
 .list {
@@ -52,6 +51,5 @@
   background-image: url("/bg.png");
 }
 .go h1 {
-  color: var(--color-base);
   text-align: center;
 }
