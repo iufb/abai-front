@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 import logo from "/ais-logo-rs.png";
 export const Navbar = () => {
+  const { t } = useTranslation();
   return (
     <header className={styles.wrapper}>
       <nav className={styles.nav}>
@@ -30,7 +31,7 @@ export const Navbar = () => {
               variant="primary"
               className={styles.applicationBtn}
             >
-              Оставить заявку
+              {t("buttons.contact")}
             </Button>
           </section>
           <LanguageSwitcher />
