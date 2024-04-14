@@ -1,6 +1,7 @@
 export { Navbar } from "./Navbar/Navbar";
 export { Section } from "./Section/Section";
 export { Hero } from "./Hero/Hero";
+export { UpButton } from "./UpButton/UpButton";
 export { About } from "./About/About";
 export { Labs } from "./Labs/Labs";
 export { Admission } from "./Admission/Admission";

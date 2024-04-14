@@ -9,14 +9,15 @@ import {
   Programs,
   Partners,
   Footer,
+  UpButton,
 } from "./components";
 
 function App() {
   return (
     <>
       <Navbar />
+      <Hero />
       <main className="rootContent">
-        <Hero />
         <About />
         <Labs />
         <Programs />
@@ -25,6 +26,7 @@ function App() {
         <Partners />
       </main>
       <Footer />
+      <UpButton />
     </>
   );
 }

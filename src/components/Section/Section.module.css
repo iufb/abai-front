@@ -1,8 +1,11 @@
-.section {
+.fullWidth {
   width: 100%;
+}
+.limitedWidth {
   margin: 0 auto;
   max-width: 1280px;
 }
+
 .fullHeight {
   height: 100%;
 }

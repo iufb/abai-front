@@ -2,6 +2,7 @@ import clsx from "clsx";
 import styles from "./Section.module.css";
 export const Section = ({
   fullHeight = false,
+  fullWidth = false,
   className,
   children,
   ...props
@@ -9,8 +10,8 @@ export const Section = ({
   return (
     <section
       className={clsx(
-        styles.section,
         fullHeight ? styles.fullHeight : styles.screen,
+        fullWidth ? styles.fullWidth : styles.limitedWidth,
         className,
       )}
       {...props}
