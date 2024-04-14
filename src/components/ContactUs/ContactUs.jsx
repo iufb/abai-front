@@ -8,15 +8,17 @@ import styles from "./ContactUs.module.css";
 import { supabase } from "../../supabase";
 import { uploadFile } from "../../utils";
 import { useTranslation } from "react-i18next";
+import { Text } from "../Text/Text";
 
 export const ContactUs = () => {
+  const { t } = useTranslation();
   return (
     <Section id="form" className={styles.container}>
       <section className={styles.wrapper}>
-        <div className={styles.bg}>
-          ContactUs
-          <Form />
-        </div>
+        <Text tag={"h2"} variant={"title"}>
+          {t("form.title")}
+        </Text>
+        <Form t={t} />
       </section>
     </Section>
   );
@@ -38,8 +40,7 @@ const sources = [
   "Рекомендации знакомых",
   "Проходили / проезжали мимо",
 ];
-const Form = () => {
-  const { t } = useTranslation();
+const Form = ({ t }) => {
   const [lang, setLang] = useState(languages[0]);
   const [nextClass, setNextClass] = useState(classes[0]);
   const [sourcesState, setSourcesState] = useState([]);
