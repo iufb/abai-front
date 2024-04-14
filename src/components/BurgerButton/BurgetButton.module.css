@@ -10,10 +10,26 @@
   position: fixed;
   right: 0;
   top: 0;
-  background-color: var(--color-secondary);
+  bottom: 0;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   z-index: 200;
+  padding-left: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   width: 70%;
-  height: 100vh;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+.link a {
+  color: var(--color-base);
+  font-size: 20px;
 }
 .close {
   color: var(--color-base);

@@ -15,10 +15,16 @@ button:disabled {
 }
 .outline {
   background-color: inherit;
-  border: 2px solid var(--color-base);
   padding: 10px 15px;
-  color: var(--color-base);
   font-weight: bold;
+}
+.base {
+  color: var(--color-base);
+  border: 2px solid var(--color-base);
+}
+.secondary {
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
 }
 .primary {
   border: solid transparent;
@@ -36,7 +42,7 @@ button:disabled {
   margin: 0;
   outline: none;
   overflow: visible;
-  padding: 13px 16px;
+  padding: 10px 16px;
   text-align: center;
   text-transform: uppercase;
   touch-action: manipulation;

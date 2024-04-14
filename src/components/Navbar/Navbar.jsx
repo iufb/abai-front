@@ -13,29 +13,29 @@ export const Navbar = () => {
           <img src={logo} alt="Ais logo" className={styles.logo} />
         </div>
         <div className={styles.right}>
-          <LanguageSwitcher />
-          <Button
-            isLink={true}
-            href="#form"
-            variant="primary"
-            className={styles.applicationBtn}
-          >
-            Оставить заявку
-          </Button>
-        </div>
-        <BurgerButton className={styles.burger}>
-          <div className={styles.right}>
-            <LanguageSwitcher />
+          <section className={styles.buttons}>
             <Button
               isLink={true}
+              href="#admission"
+              variant="outline"
+              className={styles.applicationBtn}
+            >
+              Поступление
+            </Button>
+
+            <Button
+              isLink={true}
+              color="base"
               href="#form"
               variant="primary"
               className={styles.applicationBtn}
             >
               Оставить заявку
             </Button>
-          </div>
-        </BurgerButton>
+          </section>
+          <LanguageSwitcher />
+          <BurgerButton className={styles.burger} />
+        </div>
       </nav>
     </header>
   );

@@ -196,7 +196,7 @@ const Form = ({ t }) => {
       </div>
       {error && <span className="error">{error}</span>}
       {notification && <span className="success">{notification}</span>}
-      <Button disabled={loading} type="submit" variant={"primary"}>
+      <Button color="base" disabled={loading} type="submit" variant={"primary"}>
         {loading ? t("buttons.form.loading") : t("buttons.form.base")}
       </Button>
     </form>

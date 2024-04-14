@@ -14,7 +14,7 @@ export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
   return (
-    <Section fullHeight className={styles.wrapper}>
+    <Section id="admission" fullHeight className={styles.wrapper}>
       <Text tag={"h1"} variant={"title"}>
         {t("admission.title")}
       </Text>
@@ -90,7 +90,12 @@ const AskQuestionForm = ({ t }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <Button disabled={loading} type={"submit"} variant="primary">
+        <Button
+          color="base"
+          disabled={loading}
+          type={"submit"}
+          variant="primary"
+        >
           {loading ? t("buttons.form.loading") : t("buttons.form.base")}
         </Button>
       </form>

@@ -7,8 +7,6 @@
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
-  bottom: -30%;
-
   z-index: 100;
 }
 .nav {
@@ -32,6 +30,11 @@
   object-fit: contain;
 }
 .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.buttons {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -108,8 +111,14 @@ input:checked + .slider:after {
   transform: translateX(0);
   transition: transform 0.1s ease-out;
 }
-@media (max-width: 400px) {
-  .right {
+
+@media (max-width: 1280px) {
+  .nav {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 600px) {
+  .buttons {
     display: none;
   }
   .burger {
