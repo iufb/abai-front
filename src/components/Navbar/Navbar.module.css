@@ -85,6 +85,7 @@
   content: attr(data-lang);
   height: 26px;
   color: var(--color-primary);
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -47,7 +47,7 @@ const GoSection = ({ t }) => {
       <Text tag="h1" variant={"title"} color="base">
         {t(`go`)}
       </Text>
-      <Button color="base" isLink variant={"outline"}>
+      <Button href="#form" color="base" isLink variant={"outline"}>
         {t("buttons.go")}
       </Button>
     </section>

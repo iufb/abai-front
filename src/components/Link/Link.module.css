@@ -1,0 +1,12 @@
+.link {
+  color: var(--color-base);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.link img {
+  width: 30px;
+  height: 30px;
+  filter: invert(95%) sepia(100%) saturate(2%) hue-rotate(144deg)
+    brightness(104%) contrast(99%);
+}

@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { useTranslation } from "react-i18next";
-import { Contacts } from "../Footer/Footer";
+import { Contacts } from "../Contacts/Contacts";
 import styles from "./BurgetButton.module.css";
 export const BurgerButton = ({ className }) => {
   const { t } = useTranslation();
@@ -45,7 +45,7 @@ export const BurgerButton = ({ className }) => {
                 </a>
               </li>
             </ul>
-            <Contacts t={t} />
+            <Contacts />
           </div>,
           document.body,
         )}

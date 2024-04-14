@@ -27,7 +27,8 @@ label {
   font-weight: bold;
 }
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "M PLUS Rounded 1c", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

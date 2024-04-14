@@ -4,8 +4,8 @@ import { Text } from "../Text/Text";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper/modules";
 import styles from "./Labs.module.css";
 export const Labs = () => {
   const { t } = useTranslation();
@@ -58,12 +58,12 @@ const MainSlider = ({ t }) => {
       slidesPerView={1}
     >
       {labs.map((lab) => (
-        <SwiperSlide className={styles.slide}>
+        <SwiperSlide className={styles.slide} key={lab.title}>
           <section className={styles.slideContent}>
             <Text variant={"subtitle"} color="primary" tag={"h4"}>
               {t(lab.title)}
             </Text>
-            <Images imgs={lab.images} />
+            <Images title={lab.title} imgs={lab.images} />
           </section>
         </SwiperSlide>
       ))}
@@ -71,12 +71,12 @@ const MainSlider = ({ t }) => {
   );
 };
 
-const Images = ({ imgs }) => {
+const Images = ({ title, imgs }) => {
   return (
     <section className={styles.images}>
-      {imgs.map((image) => (
-        <div className={styles.imgContainer}>
-          <img src={image} alt={image.name} />
+      {imgs.map((image, idx) => (
+        <div key={idx} className={styles.imgContainer}>
+          <img src={image} alt={`${title}-${idx}`} />
         </div>
       ))}
     </section>

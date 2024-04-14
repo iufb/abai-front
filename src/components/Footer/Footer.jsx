@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { Section } from "../Section/Section";
 import styles from "./Footer.module.css";
 import { Text } from "../Text/Text";
+import { Contacts } from "../Contacts/Contacts";
+import { Link } from "../Link/Link";
 const socialLinks = [
   {
     label: "Facebook",
@@ -66,8 +68,8 @@ const MiddleFooter = ({ t }) => {
       </Text>
 
       <section className={styles.linksWrapper}>
-        {socialLinks.map((link) => (
-          <Link target="_blank" href={link.href} icon={link.icon}>
+        {socialLinks.map((link, idx) => (
+          <Link key={idx} target="_blank" href={link.href} icon={link.icon}>
             {link.label}
           </Link>
         ))}
@@ -79,33 +81,7 @@ const RightFooter = ({ t }) => {
   return (
     <section className={styles.right}>
       <MiddleFooter t={t} />
-      <Contacts t={t} />
+      <Contacts />
     </section>
-  );
-};
-
-export const Contacts = ({ t }) => {
-  return (
-    <section className={styles.rightContent}>
-      <Text tag="h4" variant={"subtitle"} color="base">
-        {t("footer.rightTitle")}
-      </Text>
-      <Text tag="h6" variant={"subsubtitle"} color="base">
-        E-mail
-      </Text>
-      <Link href={"mailto:abaiitschool@gmail.com"}>abaiitschool@gmail.com</Link>
-      <Text tag="h6" variant={"subsubtitle"} color="base">
-        {t("footer.school")}
-      </Text>
-      <Link href={"tel:+7 707 150 42 00"}>+7 (707) 150 42 00</Link>
-    </section>
-  );
-};
-const Link = ({ href, children, icon, ...props }) => {
-  return (
-    <a href={href} className={styles.link} {...props}>
-      {icon && <img src={icon} alt={children} />}
-      <span>{children}</span>
-    </a>
   );
 };
