@@ -64,6 +64,28 @@
   color: var(--color-primary);
   margin-bottom: 20px;
 }
+.askQuestion {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.askQuestion h3 {
+  text-align: center;
+}
+.askQuestion form {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.askQuestion form * {
+  flex: 1;
+}
+
+@media screen and (max-width: 850px) {
+  .askQuestion form {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 740px) {
   .selection {
     flex-direction: column;

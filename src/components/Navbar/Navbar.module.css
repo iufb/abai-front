@@ -65,7 +65,7 @@
 }
 .slider::after {
   position: absolute;
-  content: attr(data-notActive);
+  content: attr(data-notactive);
   height: 26px;
   color: var(--color-gray);
   display: flex;

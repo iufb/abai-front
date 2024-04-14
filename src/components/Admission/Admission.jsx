@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Section } from "../Section/Section";
+import { Input } from "../Input/Input";
+import { Button } from "../Button/Button";
 import { useTranslation } from "react-i18next";
 import firstStep from "/firstStep.png";
 import secondStep from "/secondStep.png";
@@ -7,6 +9,7 @@ import thirdStep from "/thirdStep.png";
 import styles from "./Admission.module.css";
 import { Text } from "../Text/Text";
 import clsx from "clsx";
+import { supabase } from "../../supabase";
 export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
@@ -26,7 +29,72 @@ export const Admission = () => {
         ))}
       </section>
       {tab == "how" ? <SelectionCommittee t={t} /> : <Prices t={t} />}
+      <AskQuestionForm t={t} />
     </Section>
+  );
+};
+const AskQuestionForm = ({ t }) => {
+  const [name, setName] = useState("");
+  const [tel, setTel] = useState("");
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [notification, setNotification] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setNotification("");
+    const params = {
+      name,
+      email,
+      tel,
+    };
+    const { error } = await supabase.from("questions").insert(params);
+    if (error) {
+      setError(t("question.error"));
+    } else {
+      setNotification(t("question.notification"));
+    }
+
+    setLoading(false);
+  };
+
+  return (
+    <section className={styles.askQuestion}>
+      <Text tag={"h3"} variant={"title"}>
+        {t("question.title")}
+      </Text>
+      {error && <span className="error">{error}</span>}
+      {notification && <span className="success">{notification}</span>}
+      <form onSubmit={handleSubmit}>
+        <Input
+          required
+          type="text"
+          label={t("question.name")}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <Input
+          type="tel"
+          required
+          label={t("question.tel")}
+          value={tel}
+          onChange={(e) => setTel(e.target.value)}
+        />
+        <Input
+          type="email"
+          required
+          label={t("question.email")}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <Button disabled={loading} type={"submit"} variant="primary">
+          {loading ? t("buttons.form.loading") : t("buttons.form.base")}
+        </Button>
+      </form>
+    </section>
   );
 };
 const SelectionCommittee = ({ t }) => {
@@ -37,7 +105,6 @@ const SelectionCommittee = ({ t }) => {
       </Text>
 
       <section className={styles.selection}>
-        <span className={styles.dots} />
         <section className={styles.selectionStep}>
           <img src={firstStep} alt="firstStep" />
           <Text tag={"p"} variant={"p"}>

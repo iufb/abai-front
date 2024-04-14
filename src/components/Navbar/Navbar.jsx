@@ -63,7 +63,7 @@ const LanguageSwitcher = () => {
         }}
       />
       <span
-        data-notActive={notSelected.toUpperCase()}
+        data-notactive={notSelected.toUpperCase()}
         data-lang={selectedLang.toUpperCase()}
         className={styles.slider}
       />
