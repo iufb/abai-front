@@ -47,9 +47,10 @@ const LanguageSwitcher = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  const selectedLang = lang ? "ru" : "en";
+  const selectedLang = lang ? "kz" : "ru";
+  const notSelected = selectedLang == "kz" ? "ru" : "kz";
   useEffect(() => {
-    changeLanguage(lang ? "ru" : "en");
+    changeLanguage(selectedLang);
   }, [lang]);
 
   return (
@@ -57,11 +58,15 @@ const LanguageSwitcher = () => {
       <input
         type="checkbox"
         checked={lang}
-        onChange={(e) => {
+        onChange={() => {
           setLang(!lang);
         }}
       />
-      <span data-lang={selectedLang.toUpperCase()} className={styles.slider} />
+      <span
+        data-notActive={notSelected.toUpperCase()}
+        data-lang={selectedLang.toUpperCase()}
+        className={styles.slider}
+      />
     </label>
   );
 };

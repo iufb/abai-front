@@ -1,13 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import translationEN from "./locales/eng/tr.json"; // English translations
-import translationRu from "./locales/rus/tr.json"; // German translations
+import translationKZ from "./locales/kz/tr.json";
+import translationRu from "./locales/rus/tr.json";
 
 // the translations
 const resources = {
-  en: {
-    translation: translationEN,
+  kz: {
+    translation: translationKZ,
   },
   ru: {
     translation: translationRu,

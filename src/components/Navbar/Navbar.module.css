@@ -63,6 +63,20 @@
 
   border-radius: 20px;
 }
+.slider::after {
+  position: absolute;
+  content: attr(data-notActive);
+  height: 26px;
+  color: var(--color-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+
+  border-radius: 10px;
+}
 .slider::before {
   position: absolute;
   content: attr(data-lang);
@@ -83,6 +97,14 @@ input:checked + .slider:before {
   transition: transform 0.1s ease-out;
 }
 input:not(:checked) + .slider:before {
+  transform: translateX(0);
+  transition: transform 0.1s ease-out;
+}
+input:not(:checked) + .slider:after {
+  transform: translateX(26px);
+  transition: transform 0.1s ease-out;
+}
+input:checked + .slider:after {
   transform: translateX(0);
   transition: transform 0.1s ease-out;
 }
