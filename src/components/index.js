@@ -2,6 +2,7 @@ export { Navbar } from "./Navbar/Navbar";
 export { Section } from "./Section/Section";
 export { Hero } from "./Hero/Hero";
 export { About } from "./About/About";
+export { Labs } from "./Labs/Labs";
 export { Admission } from "./Admission/Admission";
 export { Programs } from "./Programs/Programs";
 export { Footer } from "./Footer/Footer";

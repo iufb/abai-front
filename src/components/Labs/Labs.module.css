@@ -1,0 +1,41 @@
+.mainSlider {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.slide {
+  text-align: center;
+  padding: 40px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slideContent {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.imgContainer {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .images {
+    flex-direction: column;
+  }
+}

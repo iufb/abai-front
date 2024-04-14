@@ -4,6 +4,7 @@ import {
   Admission,
   ContactUs,
   Hero,
+  Labs,
   Navbar,
   Programs,
   Partners,
@@ -17,6 +18,7 @@ function App() {
       <main className="rootContent">
         <Hero />
         <About />
+        <Labs />
         <Programs />
         <Admission />
         <ContactUs />
