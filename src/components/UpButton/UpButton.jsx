@@ -25,7 +25,7 @@ export const UpButton = () => {
   return (
     <button
       style={{
-        opacity,
+        opacity: opacity ? opacity : 0,
       }}
       onClick={scrollToTop}
       className={styles.up}
