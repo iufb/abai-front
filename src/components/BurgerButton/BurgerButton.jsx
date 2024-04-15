@@ -24,7 +24,11 @@ export const BurgerButton = ({ className }) => {
   };
   return (
     <>
-      <button className={clsx(styles.wrapper, className)} onClick={toggleMenu}>
+      <button
+        aria-label="Меню"
+        className={clsx(styles.wrapper, className)}
+        onClick={toggleMenu}
+      >
         <img src="/burger.svg" />
       </button>
       {isOpen &&

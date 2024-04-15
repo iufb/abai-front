@@ -18,16 +18,16 @@ export const Admission = () => {
       <Text tag={"h1"} variant={"title"}>
         {t("admission.title")}
       </Text>
-      <section>
-        {t("admission.tabs", { returnObjects: true }).map(({ key, value }) => (
-          <Tab
-            value={value}
-            isActive={key == tab}
-            key={key}
-            onClick={() => setTab(key)}
-          />
-        ))}
-      </section>
+      {/* <section> */}
+      {/*   {t("admission.tabs", { returnObjects: true }).map(({ key, value }) => ( */}
+      {/*     <Tab */}
+      {/*       value={value} */}
+      {/*       isActive={key == tab} */}
+      {/*       key={key} */}
+      {/*       onClick={() => setTab(key)} */}
+      {/*     /> */}
+      {/*   ))} */}
+      {/* </section> */}
       {tab == "how" ? <SelectionCommittee t={t} /> : <Prices t={t} />}
       <AskQuestionForm t={t} />
     </Section>

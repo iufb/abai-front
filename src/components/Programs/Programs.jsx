@@ -18,7 +18,7 @@ export const Programs = () => {
         <Program t={t} variant={"middle"} />
         <Program t={t} variant={"senior"} />
       </section>
-
+      <SchoolFormat t={t} />
       <GoSection t={t} />
     </Section>
   );
@@ -26,7 +26,7 @@ export const Programs = () => {
 const Program = ({ t, variant }) => (
   <section className={styles.program}>
     <section>
-      <Text tag="h1" variant={"subtitle"} color="base">
+      <Text tag="h2" variant={"subtitle"} color="base">
         {t(`program.${variant}.title`)}
       </Text>
       <ul className={styles.list}>
@@ -40,7 +40,21 @@ const Program = ({ t, variant }) => (
     </div>
   </section>
 );
-
+const SchoolFormat = ({ t }) => {
+  return (
+    <section className={styles.format}>
+      <Text tag="h2" variant={"title"} color="primary">
+        {t(`format.title`)}
+      </Text>
+      <Text tag="h4" variant={"subtitle"} color="secondary">
+        {t(`format.first`)}
+      </Text>
+      <Text tag="p" variant={"p"} color="primary">
+        {t(`format.second`)}
+      </Text>
+    </section>
+  );
+};
 const GoSection = ({ t }) => {
   return (
     <section className={styles.go}>
