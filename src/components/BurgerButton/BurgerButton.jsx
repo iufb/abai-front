@@ -10,6 +10,7 @@ export const BurgerButton = ({ className }) => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    changeOverflow();
   };
   const changeOverflow = () => {
     if (!isOpen) {
