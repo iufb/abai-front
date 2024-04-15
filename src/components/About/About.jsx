@@ -9,7 +9,7 @@ import clsx from "clsx";
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <Section>
+    <Section fullHeight>
       <section className={styles.wrapper}>
         <section className={styles.left}>
           <Text tag="h1" variant={"title"}>

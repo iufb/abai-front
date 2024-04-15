@@ -13,7 +13,7 @@ import { Text } from "../Text/Text";
 export const ContactUs = () => {
   const { t } = useTranslation();
   return (
-    <Section id="form" className={styles.container}>
+    <Section fullHeight id="form" className={styles.container}>
       <section className={styles.wrapper}>
         <Text tag={"h2"} variant={"title"}>
           {t("form.title")}
