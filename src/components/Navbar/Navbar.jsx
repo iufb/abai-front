@@ -21,7 +21,7 @@ export const Navbar = () => {
               variant="outline"
               className={styles.applicationBtn}
             >
-              Поступление
+              {t("buttons.admission")}
             </Button>
 
             <Button
