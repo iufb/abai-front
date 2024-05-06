@@ -16,8 +16,12 @@
   border-radius: 10px;
   padding: 10px;
   flex: 1;
-
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
   color: var(--color-base);
+}
+.program:hover {
+  transform: scale(105%);
 }
 .program h1 {
   font-weight: bold;
