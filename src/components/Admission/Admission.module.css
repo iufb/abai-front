@@ -82,6 +82,13 @@
   flex-direction: column;
   gap: 30px;
 }
+
+.formUp {
+  display: flex;
+  gap: 10px;
+}
+.formDown {
+}
 .askQuestion h3 {
   text-align: center;
 }
@@ -128,6 +135,9 @@
   .selection {
     flex-direction: column;
     gap: 50px;
+  }
+  .formUp {
+    flex-direction: column;
   }
   .tabs {
     max-width: 600px;

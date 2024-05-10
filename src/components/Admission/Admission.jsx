@@ -29,7 +29,6 @@ export const Admission = () => {
         ))}
       </section>
       {ShowContent(tab, t)}
-      <AskQuestionForm t={t} />
       <Text
         className={styles.admissionEnd}
         tag={"h2"}
@@ -52,6 +51,7 @@ export const Admission = () => {
           ),
         }}
       />
+      <AskQuestionForm t={t} />
     </Section>
   );
 };
@@ -71,6 +71,7 @@ const AskQuestionForm = ({ t }) => {
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
   const [email, setEmail] = useState("");
+  const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState("");
   const [error, setError] = useState("");
@@ -83,12 +84,17 @@ const AskQuestionForm = ({ t }) => {
       name,
       email,
       tel,
+      question,
     };
     const { error } = await supabase.from("questions").insert(params);
     if (error) {
       setError(t("question.error"));
     } else {
       setNotification(t("question.notification"));
+      setName("");
+      setEmail("");
+      setTel("");
+      setQuestion("");
     }
 
     setLoading(false);
@@ -101,29 +107,38 @@ const AskQuestionForm = ({ t }) => {
       </Text>
       {error && <span className="error">{error}</span>}
       {notification && <span className="success">{notification}</span>}
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.formUp}>
+          <Input
+            required
+            type="text"
+            label={t("question.name")}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            type="tel"
+            required
+            label={t("question.tel")}
+            value={tel}
+            onChange={(e) => setTel(e.target.value)}
+          />
+          <Input
+            className={styles.formDown}
+            type="email"
+            required
+            label={t("question.email")}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
         <Input
-          required
           type="text"
-          label={t("question.name")}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Input
-          type="tel"
           required
-          label={t("question.tel")}
-          value={tel}
-          onChange={(e) => setTel(e.target.value)}
+          label={t("question.question")}
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
         />
-        <Input
-          type="email"
-          required
-          label={t("question.email")}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
         <Button
           color="base"
           disabled={loading}

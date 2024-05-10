@@ -1,19 +1,24 @@
 import { useTranslation } from "react-i18next";
-import { Section } from "../Section/Section";
-import styles from "./Footer.module.css";
-import { Text } from "../Text/Text";
 import { Contacts } from "../Contacts/Contacts";
 import { Link } from "../Link/Link";
+import { Section } from "../Section/Section";
+import { Text } from "../Text/Text";
+import styles from "./Footer.module.css";
 const socialLinks = [
   {
     label: "Facebook",
-    href: "",
+    href: "https://www.facebook.com/profile.php?id=61558139986512",
     icon: "/fb.svg",
   },
   {
     label: "Whatsapp",
     href: "https://wa.me/87071504200",
     icon: "/wp.svg",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@abaiitschool?_t=8lnHN0WRGtB&_r=1",
+    icon: "/tt.svg",
   },
   {
     label: "Instagram",
