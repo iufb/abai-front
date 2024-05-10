@@ -57,3 +57,36 @@
 .go h1 {
   text-align: center;
 }
+.scheduleWrapper {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scheduleItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.scheduleLeft {
+  font-size: 22px;
+}
+.dottedLine {
+  flex: 1;
+  border-bottom: 3px dotted var(--color-primary);
+  margin: 0 10px;
+}
+.scheduleRight {
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+@media screen and (max-width: 525px) {
+  .scheduleLeft {
+    font-size: 16px;
+  }
+  .scheduleRight {
+    font-size: 20px;
+  }
+}

@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import crop from "/crop.png";
-import go from "/bg.png";
+import { Button } from "../Button/Button";
+import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Programs.module.css";
-import { Section } from "../Section/Section";
-import { Button } from "../Button/Button";
+import crop from "/crop.png";
 export const Programs = () => {
   const { t } = useTranslation();
 
@@ -52,6 +51,20 @@ const SchoolFormat = ({ t }) => {
       <Text tag="p" variant={"p"} color="primary">
         {t(`format.second`)}
       </Text>
+      <Schedule t={t} />
+    </section>
+  );
+};
+const Schedule = ({ t }) => {
+  return (
+    <section className={styles.scheduleWrapper}>
+      {t("format.schedule", { returnObjects: true }).map((schedule) => (
+        <div className={styles.scheduleItem}>
+          <span className={styles.scheduleLeft}>{schedule.left}</span>
+          <span className={styles.dottedLine} />
+          <span className={styles.scheduleRight}>{schedule.right}</span>
+        </div>
+      ))}
     </section>
   );
 };

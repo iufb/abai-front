@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.title {
+  display: inline;
+}
+.hint {
+  background-color: var(--color-gray);
+  padding: 20px 30px;
+  border-radius: 20px;
+}
+.end {
+  text-align: center;
+}
+.idx {
+  font-size: 28px;
+}
+.slider {
+  width: 100%;
+}

@@ -20,28 +20,57 @@ export const Labs = () => {
 };
 const labs = [
   {
-    title: "labs.robot",
+    title: "labs.robot.title",
+    body: "labs.robot.body",
     images: ["/labs/1.jpeg", "/labs/2.jpeg", "/labs/3.jpg"],
   },
-  { title: "labs.game", images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"] },
-  { title: "labs.3d", images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"] },
-  { title: "labs.vr", images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"] },
   {
-    title: "labs.huawei",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
-  },
-  { title: "labs.web", images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"] },
-  { title: "labs.ai", images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"] },
-  {
-    title: "labs.start",
+    title: "labs.game.title",
+
+    body: "labs.game.body",
     images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
   },
   {
-    title: "labs.sport",
+    title: "labs.3d.title",
+    body: "labs.3d.body",
     images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
   },
   {
-    title: "labs.design",
+    title: "labs.vr.title",
+    body: "labs.vr.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.huawei.title",
+
+    body: "labs.huawei.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.web.title",
+    body: "labs.web.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.ai.title",
+    body: "labs.ai.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.start.title",
+
+    body: "labs.start.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.sport.title",
+
+    body: "labs.sport.body",
+    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+  },
+  {
+    title: "labs.design.title",
+    body: "labs.design.body",
     images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
   },
 ];
@@ -64,6 +93,9 @@ const MainSlider = ({ t }) => {
               {t(lab.title)}
             </Text>
             <Images title={lab.title} imgs={lab.images} />
+            <Text variant={"p"} color="primary" tag={"p"}>
+              {t(lab.body)}
+            </Text>
           </section>
         </SwiperSlide>
       ))}

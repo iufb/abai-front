@@ -3,12 +3,14 @@ import {
   About,
   Admission,
   ContactUs,
+  Faces,
+  Footer,
   Hero,
   Labs,
   Navbar,
-  Programs,
   Partners,
-  Footer,
+  Programs,
+  Unique,
   UpButton,
 } from "./components";
 
@@ -19,6 +21,8 @@ function App() {
       <Hero />
       <main className="rootContent">
         <About />
+        <Faces />
+        <Unique />
         <Labs />
         <Programs />
         <Admission />

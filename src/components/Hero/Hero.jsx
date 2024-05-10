@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { Button } from "../Button/Button";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Hero.module.css";
-import { Button } from "../Button/Button";
 export const Hero = () => {
   const { t } = useTranslation();
   return (
@@ -19,6 +19,10 @@ export const Hero = () => {
           <Text tag={"h4"} color="base" variant={"title"}>
             {t("hero.subsubtitle")}
           </Text>
+          <Text tag={"h5"} color="base" variant={"title"}>
+            {t("hero.text")}
+          </Text>
+
           <Button
             href="#form"
             isLink
