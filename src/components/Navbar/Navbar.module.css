@@ -17,6 +17,16 @@
   align-items: center;
   justify-content: space-between;
 }
+.link {
+  text-decoration: none;
+  color: var(--color-primary);
+  text-wrap: nowrap;
+}
+.phoneIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+}
 .applicationBtn {
   display: block;
 }

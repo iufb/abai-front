@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 
 import { useEffect, useState } from "react";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
+import { Link } from "../Link/Link";
 import logo from "/ais-logo-rs.png";
 export const Navbar = () => {
   const { t } = useTranslation();
@@ -15,6 +16,9 @@ export const Navbar = () => {
         </div>
         <div className={styles.right}>
           <section className={styles.buttons}>
+            <a className={styles.link} href="#about">
+              {t("about.title")}
+            </a>
             <Button
               isLink={true}
               href="#admission"
@@ -33,6 +37,9 @@ export const Navbar = () => {
             >
               {t("buttons.contact")}
             </Button>
+            <Link href={"tel:+7 708 938 3180"}>
+              <img className={styles.phoneIcon} src="/phone.png" alt="call" />
+            </Link>
           </section>
           <LanguageSwitcher />
           <BurgerButton className={styles.burger} />

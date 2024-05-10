@@ -9,7 +9,7 @@ import clsx from "clsx";
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <Section fullHeight>
+    <Section id={"about"} fullHeight>
       <section className={styles.wrapper}>
         <section className={styles.left}>
           <Text tag="h1" variant={"title"}>
@@ -56,7 +56,7 @@ const Factor = ({ t, variant }) => {
         styles.factor,
         { first: styles.first, second: styles.second, third: styles.third }[
           variant
-        ],
+        ]
       )}
     >
       <img

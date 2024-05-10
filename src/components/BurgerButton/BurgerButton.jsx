@@ -40,6 +40,11 @@ export const BurgerButton = ({ className }) => {
             </button>
             <ul className={styles.links}>
               <li className={styles.link}>
+                <a onClick={navigate} href="#about">
+                  {t("about.title")}
+                </a>
+              </li>
+              <li className={styles.link}>
                 <a onClick={navigate} href="#admission">
                   {t("buttons.admission")}
                 </a>
@@ -52,7 +57,7 @@ export const BurgerButton = ({ className }) => {
             </ul>
             <Contacts />
           </div>,
-          document.body,
+          document.body
         )}
     </>
   );
