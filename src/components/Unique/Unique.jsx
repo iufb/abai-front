@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -53,8 +56,13 @@ const ProgramsSlider = ({ t }) => {
   return (
     <Swiper
       style={{
-        "--swiper-navigation-color": "var(--color-primary)",
+        "--swiper-pagination-color": "var(--color-primary)",
         margin: "20px 0",
+      }}
+      modules={[Pagination]}
+      pagination={{
+        clickable: true,
+        dynamicBullets: true,
       }}
       breakpoints={{
         320: {

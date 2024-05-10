@@ -92,7 +92,10 @@ const MainSlider = ({ t }) => {
             <Text variant={"subtitle"} color="primary" tag={"h4"}>
               {t(lab.title)}
             </Text>
-            <Images title={lab.title} imgs={lab.images} />
+            <div className={styles.imgContainer}>
+              <img src={lab.image} alt={`${title}`} />
+            </div>
+
             <Text variant={"p"} color="primary" tag={"p"}>
               {t(lab.body)}
             </Text>

@@ -39,3 +39,8 @@ label {
   --color-secondary: #ffd747;
   --color-gray: #ced4da;
 }
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+}
