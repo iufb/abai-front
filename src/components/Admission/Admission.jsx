@@ -1,15 +1,15 @@
+import clsx from "clsx";
 import { useState } from "react";
-import { Section } from "../Section/Section";
-import { Input } from "../Input/Input";
+import { Trans, useTranslation } from "react-i18next";
+import { supabase } from "../../supabase";
 import { Button } from "../Button/Button";
-import { useTranslation } from "react-i18next";
+import { Input } from "../Input/Input";
+import { Section } from "../Section/Section";
+import { Text } from "../Text/Text";
+import styles from "./Admission.module.css";
 import firstStep from "/firstStep.png";
 import secondStep from "/secondStep.png";
 import thirdStep from "/thirdStep.png";
-import styles from "./Admission.module.css";
-import { Text } from "../Text/Text";
-import clsx from "clsx";
-import { supabase } from "../../supabase";
 export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
@@ -18,20 +18,54 @@ export const Admission = () => {
       <Text tag={"h1"} variant={"title"}>
         {t("admission.title")}
       </Text>
-      {/* <section> */}
-      {/*   {t("admission.tabs", { returnObjects: true }).map(({ key, value }) => ( */}
-      {/*     <Tab */}
-      {/*       value={value} */}
-      {/*       isActive={key == tab} */}
-      {/*       key={key} */}
-      {/*       onClick={() => setTab(key)} */}
-      {/*     /> */}
-      {/*   ))} */}
-      {/* </section> */}
-      {tab == "how" ? <SelectionCommittee t={t} /> : <Prices t={t} />}
+      <section className={styles.tabs}>
+        {t("admission.tabs", { returnObjects: true }).map(({ key, value }) => (
+          <Tab
+            value={value}
+            isActive={key == tab}
+            key={key}
+            onClick={() => setTab(key)}
+          />
+        ))}
+      </section>
+      {ShowContent(tab, t)}
       <AskQuestionForm t={t} />
+      <Text
+        className={styles.admissionEnd}
+        tag={"h2"}
+        color="primary"
+        variant={"title"}
+      >
+        {t("admission.prices.end")}
+      </Text>
+      <Trans
+        i18nKey="admission.prices.by"
+        components={{
+          br: <br />,
+          title: (
+            <Text
+              className={styles.by}
+              tag={"h3"}
+              color="secondary"
+              variant={"title"}
+            ></Text>
+          ),
+        }}
+      />
     </Section>
   );
+};
+const ShowContent = (tab, t) => {
+  switch (tab) {
+    case "how":
+      return <SelectionCommittee t={t} />;
+    case "prices":
+      return <Prices t={t} />;
+    case "rules":
+      return <Rules t={t} />;
+    case "docs":
+      return <Docs t={t} />;
+  }
 };
 const AskQuestionForm = ({ t }) => {
   const [name, setName] = useState("");
@@ -135,7 +169,34 @@ const SelectionCommittee = ({ t }) => {
 };
 
 const Prices = ({ t }) => {
-  return <section>prices</section>;
+  return (
+    <section className={styles.tabContentWrapper}>
+      <Text tag={"h2"} color="primary" variant={"subtitle"}>
+        {t("admission.prices.month.content")}
+        <Text tag={"span"} color="secondary" variant={"subtitle"}>
+          {t("admission.prices.month.accent")}
+        </Text>
+      </Text>
+      <Text tag={"h2"} color="primary" variant={"subtitle"}>
+        {t("admission.prices.lunch.content")}
+        <Text tag={"span"} color="secondary" variant={"subtitle"}>
+          {t("admission.prices.lunch.accent")}
+        </Text>
+      </Text>
+      <Text tag={"p"} color="primary" variant={"p"}>
+        {t("admission.prices.olimps")}
+      </Text>
+      <Text tag={"h2"} color="primary" variant={"subtitle"}>
+        {t("admission.prices.dormitory.content")}
+        <Text tag={"span"} color="secondary" variant={"subtitle"}>
+          {t("admission.prices.dormitory.accent")}
+        </Text>
+      </Text>
+      <Text tag={"p"} color="primary" variant={"p"}>
+        {t("admission.prices.sale")}
+      </Text>
+    </section>
+  );
 };
 const Tab = ({ isActive, value, ...props }) => {
   return (
@@ -144,7 +205,34 @@ const Tab = ({ isActive, value, ...props }) => {
     </button>
   );
 };
-
+const Rules = ({ t }) => {
+  return (
+    <section className={styles.tabContentWrapper}>
+      <Text tag={"h3"} color="secondary" variant={"subtitle"}>
+        {t("admission.rules.title")}
+      </Text>
+      <ul className={styles.list}>
+        {t("admission.rules.content", { returnObjects: true }).map((rule) => (
+          <li key={rule}>{rule}</li>
+        ))}
+      </ul>
+    </section>
+  );
+};
+const Docs = ({ t }) => {
+  return (
+    <section className={styles.tabContentWrapper}>
+      <Text tag={"h3"} color="secondary" variant={"subtitle"}>
+        {t("admission.docs.title")}
+      </Text>
+      <ul className={styles.list}>
+        {t("admission.docs.content", { returnObjects: true }).map((rule) => (
+          <li key={rule}>{rule}</li>
+        ))}
+      </ul>
+    </section>
+  );
+};
 const Hint = ({ t }) => {
   return (
     <section className={styles.hint}>

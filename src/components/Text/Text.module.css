@@ -39,7 +39,6 @@
   color: var(--color-base);
 }
 .p {
-  display: inline;
   font-size: 20px;
   font-weight: normal;
 }
