@@ -27,15 +27,15 @@ label {
   font-weight: bold;
 }
 :root {
-  font-family: "Playfair Display", Inter, system-ui, Avenir, Helvetica, Arial,
+  font-family: "FuturaDemiC", Inter, system-ui, Avenir, Helvetica, Arial,
     sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-primary: #5d2c2c;
+  --color-primary: #7d0000;
   --color-base: #fefefe;
-  --color-secondary: #d7907b;
+  --color-secondary: #ffd747;
   --color-gray: #ced4da;
 }
