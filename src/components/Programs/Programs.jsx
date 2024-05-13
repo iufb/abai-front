@@ -58,8 +58,8 @@ const SchoolFormat = ({ t }) => {
 const Schedule = ({ t }) => {
   return (
     <section className={styles.scheduleWrapper}>
-      {t("format.schedule", { returnObjects: true }).map((schedule) => (
-        <div className={styles.scheduleItem}>
+      {t("format.schedule", { returnObjects: true }).map((schedule, idx) => (
+        <div key={idx} className={styles.scheduleItem}>
           <span className={styles.scheduleLeft}>{schedule.left}</span>
           <span className={styles.dottedLine} />
           <span className={styles.scheduleRight}>{schedule.right}</span>

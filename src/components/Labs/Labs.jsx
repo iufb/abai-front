@@ -41,7 +41,7 @@ const labs = [
     body: "labs.3d.body",
     images: {
       ru: "/labs/ru/3d.webp",
-      kz: "/labs/ru/3d.webp",
+      kz: "/labs/kz/3d.webp",
     },
   },
   {
@@ -64,8 +64,8 @@ const labs = [
     title: "labs.web.title",
     body: "labs.web.body",
     images: {
-      ru: "",
-      kz: "",
+      ru: "/labs/ru/web.webp",
+      kz: "/labs/kz/web.webp",
     },
   },
   {
