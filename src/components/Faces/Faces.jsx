@@ -28,32 +28,33 @@ export const Faces = () => {
       <Text tag="h1" variant={"title"}>
         {t("faces.title")}
       </Text>
-
-      <Swiper
-        effect={"cube"}
-        grabCursor={true}
-        cubeEffect={{
-          shadow: true,
-          slideShadows: true,
-          shadowOffset: 20,
-          shadowScale: 0.94,
-        }}
-        style={{
-          "--swiper-pagination-color": "var(--color-primary)",
-          "--swiper-navigation-color": "var(--color-primary)",
-        }}
-        centeredSlides
-        navigation
-        pagination={{ clickable: true }}
-        modules={[EffectCube, Pagination, Navigation]}
-        className={styles.slider}
-      >
-        {new Array(8).fill(".").map((_, idx) => (
-          <SwiperSlide className={styles.slide} key={idx}>
-            <img src={images[idx]} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <section className={styles.wrapper}>
+        <Swiper
+          effect={"cube"}
+          grabCursor={true}
+          cubeEffect={{
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94,
+          }}
+          style={{
+            "--swiper-pagination-color": "var(--color-primary)",
+            "--swiper-navigation-color": "var(--color-primary)",
+          }}
+          centeredSlides
+          navigation
+          pagination={{ clickable: true }}
+          modules={[EffectCube, Pagination, Navigation]}
+          className={styles.slider}
+        >
+          {new Array(8).fill(".").map((_, idx) => (
+            <SwiperSlide className={styles.slide} key={idx}>
+              <img src={images[idx]} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
     </Section>
   );
 };

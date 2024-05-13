@@ -1,21 +1,21 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useTranslation } from "react-i18next";
 import "swiper/css";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
-import { Autoplay } from "swiper/modules";
+import styles from "./Partners.module.css";
 const logos = [
   "/partners/astanahub.svg",
   "/partners/drweb.png",
-  "/partners/google.png",
+  "/partners/google.jpg",
   "/partners/huawei.svg",
-  "/partners/jusan.png",
+  "/partners/tgarden.png",
+  "/partners/sl.png",
   "/partners/kazrobotic.png",
   "/partners/qazin.svg",
   "/partners/sportprog.jpg",
-  "/partners/btseduc.png",
 ];
-import styles from "./Partners.module.css";
-import { useTranslation } from "react-i18next";
 export const Partners = () => {
   const { t } = useTranslation();
   return (
