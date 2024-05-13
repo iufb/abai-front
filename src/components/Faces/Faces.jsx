@@ -44,7 +44,7 @@ export const Faces = () => {
           }}
           centeredSlides
           navigation
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, dynamicBullets: true }}
           modules={[EffectCube, Pagination, Navigation]}
           className={styles.slider}
         >

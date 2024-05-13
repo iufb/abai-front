@@ -6,16 +6,17 @@ import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Partners.module.css";
 const logos = [
-  "/partners/astanahub.svg",
-  "/partners/drweb.png",
-  "/partners/google.jpg",
-  "/partners/huawei.svg",
-  "/partners/tgarden.png",
-  "/partners/sl.png",
-  "/partners/kazrobotic.png",
-  "/partners/qazin.svg",
-  "/partners/sportprog.jpg",
+  { image: "/partners/astanahub.svg", name: "ASTANA HUB" },
+  { image: "/partners/drweb.png", name: "Dr.WEB" },
+  { image: "/partners/google.jpg", name: "GOOGLE DEVELOPERS GROUP" },
+  { image: "/partners/huawei.svg", name: "HUAWEI" },
+  { image: "/partners/tgarden.png", name: "TechGarden" },
+  { image: "/partners/sl.png", name: "SpaceLab" },
+  { image: "/partners/kazrobotic.png", name: "KAZRobotics" },
+  { image: "/partners/qazin.svg", name: "QAZINNOVATION" },
+  { image: "/partners/sportprog.jpg", name: "FEDERATION OF SPORT PROGRAMMING" },
 ];
+
 export const Partners = () => {
   const { t } = useTranslation();
   return (
@@ -33,8 +34,11 @@ export const Partners = () => {
         modules={[Autoplay]}
       >
         {logos.map((logo, idx) => (
-          <SwiperSlide key={idx} className={styles.logo}>
-            <img src={logo} />
+          <SwiperSlide className={styles.slide} key={idx}>
+            <div className={styles.logo}>
+              <img src={logo.image} />
+            </div>
+            <span>{logo.name}</span>
           </SwiperSlide>
         ))}
       </Swiper>
