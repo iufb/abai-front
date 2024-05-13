@@ -8,13 +8,20 @@ import styles from "./Partners.module.css";
 const logos = [
   { image: "/partners/astanahub.svg", name: "ASTANA HUB" },
   { image: "/partners/drweb.png", name: "Dr.WEB" },
-  { image: "/partners/google.jpg", name: "GOOGLE DEVELOPERS GROUP" },
+  { image: "/partners/google.webp", name: "GOOGLE DEVELOPERS GROUP" },
   { image: "/partners/huawei.svg", name: "HUAWEI" },
   { image: "/partners/tgarden.png", name: "TechGarden" },
   { image: "/partners/sl.png", name: "SpaceLab" },
   { image: "/partners/kazrobotic.png", name: "KAZRobotics" },
   { image: "/partners/qazin.svg", name: "QAZINNOVATION" },
-  { image: "/partners/sportprog.jpg", name: "FEDERATION OF SPORT PROGRAMMING" },
+  {
+    image: "/partners/sportprog.webp",
+    name: "FEDERATION OF SPORT PROGRAMMING",
+  },
+  {
+    image: "/partners/obr.webp",
+    name: "partners.obr",
+  },
 ];
 
 export const Partners = () => {
@@ -38,7 +45,7 @@ export const Partners = () => {
             <div className={styles.logo}>
               <img src={logo.image} />
             </div>
-            <span>{logo.name}</span>
+            <span>{idx == logos.length - 1 ? t(logo.name) : logo.name}</span>
           </SwiperSlide>
         ))}
       </Swiper>

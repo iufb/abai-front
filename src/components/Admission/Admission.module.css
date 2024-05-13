@@ -37,6 +37,7 @@
   display: flex;
   overflow-x: scroll;
   gap: 10px;
+  padding-bottom: 20px;
 }
 
 .admissionEnd {
