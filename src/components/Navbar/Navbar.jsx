@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button";
 import styles from "./Navbar.module.css";
 
-import { useEffect, useState } from "react";
+import { useSelectedLang } from "../../utils";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
 import { Link } from "../Link/Link";
 import logo from "/ais-logo-rs.png";
@@ -50,17 +50,7 @@ export const Navbar = () => {
 };
 
 const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
-  const [lang, setLang] = useState(false);
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-  const selectedLang = lang ? "kz" : "ru";
-  const notSelected = selectedLang == "kz" ? "ru" : "kz";
-  useEffect(() => {
-    changeLanguage(selectedLang);
-  }, [lang]);
-
+  const { lang, setLang, selectedLang, notSelected } = useSelectedLang();
   return (
     <label className={styles.switch}>
       <input

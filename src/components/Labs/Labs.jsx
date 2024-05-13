@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useSelectedLang } from "../../utils";
 import styles from "./Labs.module.css";
 export const Labs = () => {
   const { t } = useTranslation();
@@ -22,59 +23,86 @@ const labs = [
   {
     title: "labs.robot.title",
     body: "labs.robot.body",
-    images: ["/labs/1.jpeg", "/labs/2.jpeg", "/labs/3.jpg"],
+    images: {
+      ru: "/labs/ru/robots.webp",
+      kz: "/labs/kz/robots.webp",
+    },
   },
   {
     title: "labs.game.title",
-
     body: "labs.game.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/games.webp",
+      kz: "/labs/kz/games.webp",
+    },
   },
   {
     title: "labs.3d.title",
     body: "labs.3d.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/3d.webp",
+      kz: "/labs/ru/3d.webp",
+    },
   },
   {
     title: "labs.vr.title",
     body: "labs.vr.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/meta.webp",
+      kz: "/labs/kz/meta.webp",
+    },
   },
   {
     title: "labs.huawei.title",
-
     body: "labs.huawei.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/HUAWEI.webp",
+      kz: "/labs/kz/HUAWEI.webp",
+    },
   },
   {
     title: "labs.web.title",
     body: "labs.web.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "",
+      kz: "",
+    },
   },
   {
     title: "labs.ai.title",
     body: "labs.ai.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/AI-ALEMI.webp",
+      kz: "/labs/kz/AI-ALEMI.webp",
+    },
   },
   {
     title: "labs.start.title",
-
     body: "labs.start.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/ABAI-START.webp",
+      kz: "/labs/kz/ABAI-START.webp",
+    },
   },
   {
     title: "labs.sport.title",
-
     body: "labs.sport.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/ABAI-IT-SPORT.webp",
+      kz: "/labs/kz/ABAI-IT-SPORT.webp",
+    },
   },
   {
     title: "labs.design.title",
     body: "labs.design.body",
-    images: ["/labs/4.jpg", "/labs/5.jpg", "/labs/6.jpg"],
+    images: {
+      ru: "/labs/ru/DESIGN.webp",
+      kz: "/labs/kz/DESIGN.webp",
+    },
   },
 ];
 const MainSlider = ({ t }) => {
+  const { lang } = useSelectedLang();
   return (
     <Swiper
       style={{
@@ -93,7 +121,10 @@ const MainSlider = ({ t }) => {
               {t(lab.title)}
             </Text>
             <div className={styles.imgContainer}>
-              <img src={lab.image} alt={`${title}`} />
+              <img
+                src={lang ? lab.images.kz : lab.images.ru}
+                alt={`${lab.title}`}
+              />
             </div>
 
             <Text variant={"p"} color="primary" tag={"p"}>
