@@ -18,7 +18,7 @@ export const Hero = () => {
           return prev + 1;
         }
       });
-    }, 3000);
+    }, 7000);
     return () => clearInterval(interval);
   }, []);
   return (
