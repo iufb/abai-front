@@ -3,3 +3,6 @@
   flex-direction: column;
   gap: 10px;
 }
+.email {
+  margin-top: 10px;
+}

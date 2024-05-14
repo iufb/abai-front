@@ -7,9 +7,6 @@ import { Input } from "../Input/Input";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Admission.module.css";
-import firstStep from "/firstStep.png";
-import secondStep from "/secondStep.png";
-import thirdStep from "/thirdStep.png";
 export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
@@ -18,22 +15,26 @@ export const Admission = () => {
       <Text tag={"h1"} variant={"title"}>
         {t("admission.title")}
       </Text>
-      <section className={styles.tabs}>
-        {t("admission.tabs", { returnObjects: true }).map(({ key, value }) => (
-          <Tab
-            value={value}
-            isActive={key == tab}
-            key={key}
-            onClick={() => setTab(key)}
-          />
-        ))}
+      <section className={styles.content}>
+        <section className={styles.tabs}>
+          {t("admission.tabs", { returnObjects: true }).map(
+            ({ key, value }) => (
+              <Tab
+                value={value}
+                isActive={key == tab}
+                key={key}
+                onClick={() => setTab(key)}
+              />
+            )
+          )}
+        </section>
+        <section className={styles.right}>{ShowContent(tab, t)}</section>
       </section>
-      {ShowContent(tab, t)}
       <Text
         className={styles.admissionEnd}
         tag={"h2"}
         color="primary"
-        variant={"title"}
+        variant={"subtitle"}
       >
         {t("admission.prices.end")}
       </Text>
@@ -160,19 +161,18 @@ const SelectionCommittee = ({ t }) => {
 
       <section className={styles.selection}>
         <section className={styles.selectionStep}>
-          <img src={firstStep} alt="firstStep" />
           <Text tag={"p"} variant={"p"}>
             {t("admission.how.firstStep")}
           </Text>
         </section>
+        <span className={styles.arrowRight}>{"→"}</span>
         <section className={styles.selectionStep}>
-          <img src={secondStep} alt="secondStep" />
           <Text tag={"p"} variant={"p"}>
             {t("admission.how.secondStep")}
           </Text>
         </section>
+        <span className={styles.arrowRight}>{"→"}</span>
         <section className={styles.selectionStep}>
-          <img src={thirdStep} alt="thirdStep" />
           <Text tag={"p"} variant={"p"}>
             {t("admission.how.thirdStep")}
           </Text>

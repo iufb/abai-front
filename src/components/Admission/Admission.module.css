@@ -1,18 +1,25 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
   position: relative;
 }
 .wrapper h1 {
-  margin-bottom: 20px;
+  margin-bottom: 80px;
+}
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 10px;
+  gap: 20px;
+}
+.right {
+  flex: 1;
 }
 .tab {
   color: var(--color-primary);
   background-color: var(--color-gray);
   border-radius: 20px;
   border: none;
-  font-size: 23px;
-  text-wrap: nowrap;
+  font-weight: bold;
+  font-size: 20px;
   padding: 10px 12px;
   transition: color 0.3s ease-out;
 }
@@ -25,7 +32,6 @@
   transition: background-color 200ms linear;
 }
 .firstTab {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -33,18 +39,32 @@
 .firstTab h4 {
   text-align: center;
 }
-.tabs {
+.arrowRight {
+  color: var(--color-primary);
+  font-size: 50px;
+  font-weight: bold;
+}
+/* .tabs {
   display: flex;
   overflow-x: scroll;
   gap: 10px;
   padding-bottom: 20px;
+} */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  width: 372px;
 }
 
 .admissionEnd {
+  color: black;
+  margin-top: 40px;
   text-align: center;
 }
 .by {
-  align-self: flex-end;
+  text-align: right;
 }
 .selection {
   display: flex;
@@ -102,7 +122,6 @@
   flex: 1;
 }
 .tabContentWrapper {
-  margin-top: 20px;
   animation: fadeIn 1s;
   display: flex;
   flex-direction: column;
@@ -117,22 +136,28 @@
   list-style-type: disc;
 }
 @media screen and (max-width: 1100px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
   .tabs {
-    max-width: 1000px;
-
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     overflow-x: scroll;
+    gap: 10px;
+    padding-bottom: 20px;
+  }
+  .tab {
+    text-wrap: nowrap;
   }
 }
 @media screen and (max-width: 850px) {
   .askQuestion form {
     flex-direction: column;
   }
-  .tabs {
-    max-width: 800px;
-    overflow-x: scroll;
-  }
 }
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 750px) {
   .selection {
     flex-direction: column;
     gap: 50px;
@@ -140,20 +165,21 @@
   .formUp {
     flex-direction: column;
   }
-  .tabs {
-    max-width: 600px;
+  .content {
+    flex-direction: column;
+  }
+
+  .arrowRight {
+    transform: rotate(90deg);
   }
   .dots {
     display: none;
   }
 }
 @media screen and (max-width: 532px) {
-  .tabs {
-    max-width: 400px;
-  }
   .tab {
     font-size: 16px;
-    padding: 10px 6px;
+    padding: 10px 10px;
   }
 }
 

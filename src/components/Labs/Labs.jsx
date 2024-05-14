@@ -4,7 +4,7 @@ import { Text } from "../Text/Text";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelectedLang } from "../../utils";
 import styles from "./Labs.module.css";
@@ -108,7 +108,11 @@ const MainSlider = ({ t }) => {
       style={{
         "--swiper-navigation-color": "var(--color-primary)",
       }}
-      modules={[Navigation]}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      modules={[Navigation, Autoplay]}
       centeredSlides
       speed={600}
       navigation

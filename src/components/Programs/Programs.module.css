@@ -88,7 +88,7 @@
 .dottedLine {
   flex: 1;
   border-bottom: 3px dotted var(--color-primary);
-  margin: 0 10px;
+  margin: 12px 10px 0 10px;
 }
 .scheduleRight {
   color: var(--color-primary);

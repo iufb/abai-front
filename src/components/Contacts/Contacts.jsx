@@ -10,7 +10,12 @@ export const Contacts = () => {
       <Text tag="h4" variant={"subtitle"} color="base">
         {t("footer.rightTitle")}
       </Text>
-      <Text tag="h6" variant={"subsubtitle"} color="base">
+      <Text
+        className={styles.email}
+        tag="h6"
+        variant={"subsubtitle"}
+        color="base"
+      >
         E-mail
       </Text>
       <Link href={"mailto:abaiitschool@gmail.com"}>abaiitschool@gmail.com</Link>

@@ -1,5 +1,4 @@
 .bg {
-  background-image: url("/herobg-light.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,6 +8,8 @@
   justify-content: center;
   align-items: center;
   position: relative;
+
+  transition: background-image 1.5s ease-in-out;
 }
 .blur {
   position: absolute;
@@ -22,6 +23,9 @@
   text-align: center;
   padding: 0 20px;
   z-index: 10;
+  -webkit-animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 .content h1 {
   font-size: 55px;
@@ -49,5 +53,26 @@
   }
   .button {
     font-size: 25px;
+  }
+}
+
+@-webkit-keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+    transform: translateZ(160px);
+  }
+}
+@keyframes slide-fwd-center {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  100% {
+    -webkit-transform: translateZ(160px);
+    transform: translateZ(160px);
   }
 }

@@ -21,14 +21,32 @@
   text-decoration: none;
   color: var(--color-primary);
   text-wrap: nowrap;
+  border-radius: 10px;
+
+  font-size: 24px;
 }
 .phoneIcon {
   width: 30px;
   height: 30px;
   border-radius: 20px;
 }
+.phone {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+.phone span {
+  text-wrap: nowrap;
+  color: var(--color-primary);
+}
 .applicationBtn {
   display: block;
+}
+.langPhone {
+  display: flex;
+  gap: 5px;
+  margin-right: 10px;
 }
 .logoWrapper {
   width: 70px;
@@ -47,7 +65,7 @@
 .buttons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 .switch {
   position: relative;
@@ -128,7 +146,36 @@ input:checked + .slider:after {
     padding: 0 20px;
   }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 860px) {
+  .link {
+    font-size: 20px;
+  }
+  .phone span {
+    display: none;
+  }
+}
+@media (max-width: 660px) {
+  .phone {
+    position: fixed;
+    right: 53px;
+    bottom: 120px;
+  }
+
+  .phoneIcon {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+  }
+  .phone span {
+    display: none;
+  }
+  .nav {
+    justify-content: start;
+  }
+  .right {
+    flex: 1;
+  }
   .buttons {
     display: none;
   }

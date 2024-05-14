@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -5,7 +6,6 @@ import styles from "./About.module.css";
 import first from "/1.png";
 import second from "/2.png";
 import third from "/3.png";
-import clsx from "clsx";
 export const About = () => {
   const { t } = useTranslation();
   return (
@@ -25,7 +25,7 @@ export const About = () => {
         <section className={styles.right}>
           <iframe
             className={styles.video}
-            src="https://www.youtube.com/embed/kqb9qKmWzcs"
+            src="https://www.youtube.com/embed/VaXjvyKFD_4"
             title="Технологический кластер «Abai IT-Valley”"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

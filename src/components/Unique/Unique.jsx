@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -45,9 +45,6 @@ export const Unique = () => {
           {t("unique.inProgram.and.3")}
         </Text>
       </section>
-      <Text className={styles.end} tag="h2" color="secondary" variant={"title"}>
-        {t("unique.inProgram.end")}
-      </Text>
     </Section>
   );
 };
@@ -59,7 +56,11 @@ const ProgramsSlider = ({ t }) => {
         "--swiper-pagination-color": "var(--color-primary)",
         margin: "20px 0",
       }}
-      modules={[Pagination]}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
+      modules={[Pagination, Autoplay]}
       pagination={{
         clickable: true,
         dynamicBullets: true,

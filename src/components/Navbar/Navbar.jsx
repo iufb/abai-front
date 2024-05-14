@@ -4,7 +4,6 @@ import styles from "./Navbar.module.css";
 
 import { useSelectedLang } from "../../utils";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
-import { Link } from "../Link/Link";
 import logo from "/ais-logo-rs.png";
 export const Navbar = () => {
   const { t } = useTranslation();
@@ -19,14 +18,15 @@ export const Navbar = () => {
             <a className={styles.link} href="#about">
               {t("about.title")}
             </a>
-            <Button
+            {/* <Button
               isLink={true}
               href="#admission"
               variant="outline"
               className={styles.applicationBtn}
-            >
+            > */}
+            <a className={styles.link} href="#admission">
               {t("buttons.admission")}
-            </Button>
+            </a>
 
             <Button
               isLink={true}
@@ -37,13 +37,16 @@ export const Navbar = () => {
             >
               {t("buttons.contact")}
             </Button>
-            <Link href={"tel:+7 708 938 3180"}>
-              <img className={styles.phoneIcon} src="/phone.png" alt="call" />
-            </Link>
           </section>
-          <LanguageSwitcher />
-          <BurgerButton className={styles.burger} />
         </div>
+        <div className={styles.langPhone}>
+          <a className={styles.phone} href={"tel:+7 708 938 3180"}>
+            <img className={styles.phoneIcon} src="/phone.png" alt="call" />
+            <span>+7 708 938 3180</span>
+          </a>
+          <LanguageSwitcher />
+        </div>
+        <BurgerButton className={styles.burger} />
       </nav>
     </header>
   );

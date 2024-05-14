@@ -36,7 +36,7 @@ export const Partners = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        spaceBetween={10}
+        spaceBetween={40}
         slidesPerView={3}
         modules={[Autoplay]}
       >
