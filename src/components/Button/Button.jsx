@@ -15,7 +15,10 @@ export const Button = ({
         className,
         styles.button,
         { base: styles.base, secondary: styles.secondary }[color],
-        { primary: styles.primary, outline: styles.outline }[variant],
+        {
+          primary: styles.primary,
+          outline: styles.outline,
+        }[variant]
       )}
       {...props}
     >

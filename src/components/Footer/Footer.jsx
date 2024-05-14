@@ -8,12 +8,12 @@ const socialLinks = [
   {
     label: "Facebook",
     href: "https://www.facebook.com/profile.php?id=61558139986512",
-    icon: "/fb.svg",
+    icon: "/fb1.svg",
   },
   {
     label: "Whatsapp",
-    href: "https://wa.me/87071504200",
-    icon: "/wp.svg",
+    href: "https://wa.me/877089383180",
+    icon: "/wp1.svg",
   },
   {
     label: "TikTok",

@@ -10,9 +10,12 @@ export const Navbar = () => {
   return (
     <header className={styles.wrapper}>
       <nav className={styles.nav}>
-        <div className={styles.logoWrapper}>
+        <a
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className={styles.logoWrapper}
+        >
           <img src={logo} alt="Ais logo" className={styles.logo} />
-        </div>
+        </a>
         <div className={styles.right}>
           <section className={styles.buttons}>
             <a className={styles.link} href="#about">

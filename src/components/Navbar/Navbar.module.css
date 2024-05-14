@@ -49,6 +49,7 @@
   margin-right: 10px;
 }
 .logoWrapper {
+  cursor: pointer;
   width: 70px;
   height: 70px;
 }
