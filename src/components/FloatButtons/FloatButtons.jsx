@@ -14,7 +14,7 @@ export const FloatButtons = () => {
     };
   }, []);
 
-  const opacity = (scrollPosition / document.body.scrollHeight) * 2;
+  const opacity = (scrollPosition / document.body.scrollHeight) * 3;
 
   const scrollToTop = () => {
     window.scrollTo({
