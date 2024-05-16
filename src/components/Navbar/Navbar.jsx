@@ -44,7 +44,7 @@ export const Navbar = () => {
         </div>
         <div className={styles.langPhone}>
           <a className={styles.phone} href={"tel:+7 708 938 3180"}>
-            <img className={styles.phoneIcon} src="/phone.png" alt="call" />
+            <img className={styles.phoneIcon} src="/phone.svg" alt="call" />
             <span>+7 708 938 3180</span>
           </a>
           <LanguageSwitcher />

@@ -10,4 +10,4 @@ export { Partners } from "./Partners/Partners";
 export { Programs } from "./Programs/Programs";
 export { Section } from "./Section/Section";
 export { Unique } from "./Unique/Unique";
-export { UpButton } from "./UpButton/UpButton";
+export { FloatButtons } from "./FloatButtons/FloatButtons";

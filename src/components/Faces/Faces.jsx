@@ -10,15 +10,11 @@ import { Text } from "../Text/Text";
 
 import styles from "./Faces.module.css";
 const images = [
-  "/faces/1.webp",
-  "/faces/2.webp",
-  "/faces/3.webp",
-  // "/faces/4.webp",
-  "/faces/5.webp",
-  "/faces/6.webp",
-  "/faces/7.webp",
-  "/faces/8.webp",
-  "/faces/9.webp",
+  "/ch/1.webp",
+  "/ch/2.webp",
+  "/ch/3.webp",
+  "/ch/5.webp",
+  "/ch/6.webp",
 ];
 
 export const Faces = () => {
@@ -48,9 +44,9 @@ export const Faces = () => {
           modules={[EffectCube, Pagination, Navigation]}
           className={styles.slider}
         >
-          {new Array(8).fill(".").map((_, idx) => (
+          {new Array(5).fill(".").map((_, idx) => (
             <SwiperSlide className={styles.slide} key={idx}>
-              <img src={images[idx]} />
+              <img src={images[idx]} alt={`face ${idx + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -4,6 +4,7 @@ import {
   Admission,
   ContactUs,
   Faces,
+  FloatButtons,
   Footer,
   Hero,
   Labs,
@@ -11,7 +12,6 @@ import {
   Partners,
   Programs,
   Unique,
-  UpButton,
 } from "./components";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
         <Partners />
       </main>
       <Footer />
-      <UpButton />
+      <FloatButtons />
     </>
   );
 }
