@@ -52,24 +52,28 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: rgb(125, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(125, 0, 0, 1) 2%,
-    rgba(180, 90, 30, 1) 14%,
-    rgba(211, 141, 47, 1) 24%,
-    rgba(239, 188, 62, 1) 33%,
-    rgba(205, 131, 44, 1) 49%,
-    rgba(255, 215, 71, 1) 64%,
-    rgba(225, 165, 55, 1) 79%,
-    rgba(198, 121, 40, 1) 89%,
-    rgba(125, 0, 0, 1) 100%
-  );
-  /* background-image: url("/bg.png"); */
+  background-image: url("/ui-icons/calm.svg");
 }
 .go h1 {
   text-align: center;
+  font-size: 52px;
+  font-weight: bold;
+  text-shadow:
+    3px 1px 1px #4af7ff,
+    2px 2px 1px #165bfb,
+    4px 2px 1px #4af7ff,
+    3px 3px 1px #165bfb,
+    5px 3px 1px #4af7ff,
+    4px 4px 1px #165bfb,
+    6px 4px 1px #4af7ff,
+    5px 5px 1px #165bfb,
+    7px 5px 1px #4af7ff,
+    6px 6px 1px #165bfb,
+    8px 6px 1px #4af7ff,
+    7px 7px 1px #165bfb,
+    9px 7px 1px #4af7ff;
 }
+
 .scheduleWrapper {
   margin: 20px 0;
   width: 100%;

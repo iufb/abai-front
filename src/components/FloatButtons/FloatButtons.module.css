@@ -11,9 +11,7 @@
   height: 50px;
 }
 .phone {
-  position: fixed;
-  right: 40px;
-  bottom: 105px;
+  display: none;
 }
 .phoneIcon {
   width: 70px;
@@ -24,4 +22,12 @@
   height: 100%;
   filter: invert(95%) sepia(100%) saturate(2%) hue-rotate(144deg)
     brightness(104%) contrast(99%);
+}
+@media screen and (max-width: 630px) {
+  .phone {
+    display: block;
+    position: fixed;
+    right: 40px;
+    bottom: 105px;
+  }
 }
