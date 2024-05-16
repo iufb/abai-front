@@ -4,7 +4,7 @@ import { Button } from "../Button/Button";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Hero.module.css";
-const heroBgs = ["/herobg-light.webp", "/faces/2.webp"];
+const heroBgs = ["/herobg-light.webp", "/ch/2.webp"];
 export const Hero = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
