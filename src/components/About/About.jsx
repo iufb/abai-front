@@ -7,6 +7,7 @@ import styles from "./About.module.css";
 import first from "/1.png";
 import second from "/2.png";
 import third from "/3.png";
+import { useRef } from "react";
 const leftVariants = {
   offscreen: {
     x: -300,
@@ -31,7 +32,6 @@ const rightVariants = {
     },
   },
 };
-
 export const About = () => {
   const { t } = useTranslation();
   return (
@@ -44,21 +44,21 @@ export const About = () => {
     >
       <section className={styles.wrapper}>
         <motion.div variants={leftVariants} className={styles.left}>
-          <img
-            src="/ui-icons/stars.svg"
-            alt="stars-ui"
-            className={styles.starRight}
-          />
-          <img
-            src="/ui-icons/stars.svg"
-            alt="stars-ui"
-            className={styles.starLeft}
-          />
-          <img
-            src="/ui-icons/stars.svg"
-            alt="stars-ui"
-            className={styles.starBottom}
-          />
+          {["starRight", "starLeft", "starBottom"].map((s) => (
+            <motion.img
+              animate={{ rotate: [-20, 20, -20] }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+                repeatType: "mirror",
+              }}
+              key={s}
+              src="/ui-icons/stars.svg"
+              alt="stars-ui"
+              className={styles[s]}
+            />
+          ))}
+
           <Text tag="h1" variant={"title"}>
             {t("about.title")}
           </Text>

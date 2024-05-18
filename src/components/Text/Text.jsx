@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import styles from "./Text.module.css";
 export const Text = ({
   tag,
@@ -8,7 +9,8 @@ export const Text = ({
   children,
   ...props
 }) => {
-  const Component = tag;
+  const Component = motion[tag];
+
   return (
     <Component
       className={clsx(

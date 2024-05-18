@@ -27,8 +27,7 @@ label {
   font-weight: bold;
 }
 :root {
-  font-family: "FuturaDemiC", Inter, system-ui, Avenir, Helvetica, Arial,
-    sans-serif;
+  font-family: "Ubuntu", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
