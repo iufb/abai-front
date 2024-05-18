@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../Button/Button";
@@ -5,6 +6,20 @@ import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Hero.module.css";
 const heroBgs = ["/herobg-light.webp", "/ch/2.webp"];
+const slideUp = {
+  hidden: {
+    opacity: 0,
+    y: 200,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.4,
+      ease: "easeInOut",
+    },
+  },
+};
 export const Hero = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
@@ -30,7 +45,12 @@ export const Hero = () => {
         className={styles.bg}
       >
         <section className={styles.blur} />
-        <section className={styles.content}>
+        <motion.section
+          initial="hidden"
+          animate="visible"
+          variants={slideUp}
+          className={styles.content}
+        >
           <Text tag={"h1"} color="base" variant={"title"}>
             {t("hero.title")}
           </Text>
@@ -53,7 +73,7 @@ export const Hero = () => {
           >
             {t("buttons.contact")}
           </Button>
-        </section>
+        </motion.section>
       </section>
     </Section>
   );

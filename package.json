@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.42.1",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.2.4",
     "i18next": "^23.11.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

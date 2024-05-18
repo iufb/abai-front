@@ -4,6 +4,9 @@
 .wrapper h1 {
   margin-bottom: 80px;
 }
+.wrapper li {
+  color: var(--color-primary);
+}
 .content {
   display: grid;
   grid-template-columns: auto 1fr;

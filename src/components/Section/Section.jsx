@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import styles from "./Section.module.css";
+import { motion } from "framer-motion";
 export const Section = ({
   fullHeight = false,
   fullWidth = false,
@@ -8,7 +9,7 @@ export const Section = ({
   ...props
 }) => {
   return (
-    <section
+    <motion.section
       className={clsx(
         fullHeight ? styles.fullHeight : styles.screen,
         fullWidth ? styles.fullWidth : styles.limitedWidth,
@@ -17,6 +18,6 @@ export const Section = ({
       {...props}
     >
       {children}
-    </section>
+    </motion.section>
   );
 };

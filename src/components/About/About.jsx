@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -6,13 +7,43 @@ import styles from "./About.module.css";
 import first from "/1.png";
 import second from "/2.png";
 import third from "/3.png";
+const leftVariants = {
+  offscreen: {
+    x: -300,
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 1,
+    },
+  },
+};
+const rightVariants = {
+  offscreen: {
+    x: 300,
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 1,
+    },
+  },
+};
 
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <Section id={"about"} fullHeight>
+    <Section
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true }}
+      id={"about"}
+      fullHeight
+    >
       <section className={styles.wrapper}>
-        <section className={styles.left}>
+        <motion.div variants={leftVariants} className={styles.left}>
           <img
             src="/ui-icons/stars.svg"
             alt="stars-ui"
@@ -28,7 +59,6 @@ export const About = () => {
             alt="stars-ui"
             className={styles.starBottom}
           />
-
           <Text tag="h1" variant={"title"}>
             {t("about.title")}
           </Text>
@@ -38,8 +68,8 @@ export const About = () => {
           <Text tag="p" variant={"p"}>
             {t("about.content")}
           </Text>
-        </section>
-        <section className={styles.right}>
+        </motion.div>
+        <motion.div variants={rightVariants} className={styles.right}>
           <iframe
             className={styles.video}
             src="https://www.youtube.com/embed/VaXjvyKFD_4"
@@ -48,17 +78,23 @@ export const About = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
-        </section>
+        </motion.div>
       </section>
       <section className={styles.bottom}>
         <Text tag="h4" variant={"subtitle"} color="secondary">
           {t("factors.title")}
         </Text>
-        <section className={styles.factorWrapper}>
+        <motion.section
+          variants={containerVariants}
+          whileInView="visible"
+          viewport={{ once: true }}
+          initial="hidden"
+          className={styles.factorWrapper}
+        >
           <Factor t={t} variant={"first"} />
           <Factor t={t} variant={"second"} />
           <Factor t={t} variant={"third"} />
-        </section>
+        </motion.section>
         <Text className={styles.end} tag="h3" variant={"subtitle"}>
           {t("factors.end")}
         </Text>
@@ -66,9 +102,34 @@ export const About = () => {
     </Section>
   );
 };
+const containerVariants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
 const Factor = ({ t, variant }) => {
   return (
-    <section
+    <motion.div
+      variants={childVariants}
       className={clsx(
         styles.factor,
         { first: styles.first, second: styles.second, third: styles.third }[
@@ -84,6 +145,6 @@ const Factor = ({ t, variant }) => {
       <Text tag="p" variant={"p"}>
         {t(`factors.${variant}`)}
       </Text>
-    </section>
+    </motion.div>
   );
 };
