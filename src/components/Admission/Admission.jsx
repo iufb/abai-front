@@ -25,11 +25,13 @@ export const Admission = () => {
                 key={key}
                 onClick={() => setTab(key)}
               />
-            )
+            ),
           )}
         </section>
         <section className={styles.right}>{ShowContent(tab, t)}</section>
       </section>
+
+      <Hint t={t} />
       <Text
         className={styles.admissionEnd}
         tag={"h2"}
@@ -178,7 +180,6 @@ const SelectionCommittee = ({ t }) => {
           </Text>
         </section>
       </section>
-      <Hint t={t} />
     </section>
   );
 };

@@ -94,6 +94,7 @@
   animation: fadeIn 1s;
 }
 .hint {
+  margin-top: 20px;
   background-color: var(--color-gray);
   padding: 20px 30px;
   border-radius: 20px;

@@ -38,7 +38,7 @@ export const About = () => {
     <Section
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: "10px" }}
       id={"about"}
       fullHeight
     >
