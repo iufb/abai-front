@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "../src/utils/i18net.js";
 import App from "./App.jsx";
-import "./fonts/future_font.css";
 import "./index.css";
 import "./reset.css";
 import { LangProvider } from "./utils";
@@ -12,5 +11,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <LangProvider>
       <App />
     </LangProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
