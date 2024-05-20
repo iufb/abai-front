@@ -87,7 +87,7 @@ export const About = () => {
         <motion.section
           variants={containerVariants}
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-300px" }}
           initial="hidden"
           className={styles.factorWrapper}
         >

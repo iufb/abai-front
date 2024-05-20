@@ -61,7 +61,7 @@ const Form = ({ t }) => {
     target: formRef,
     offset: ["0 0", "1 1"],
   });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
 
@@ -111,7 +111,7 @@ const Form = ({ t }) => {
       style={{ scale }}
       className={styles.form}
       onSubmit={handleSubmit}
-      transition={{ type: "spring" }}
+      transition={{ type: "spring", ease: "easeInOut" }}
     >
       <div className={styles.formContent}>
         <div className={styles.formLeft}>
