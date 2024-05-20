@@ -25,6 +25,7 @@
 }
 @media screen and (max-width: 630px) {
   .phone {
+    z-index: 1000;
     display: block;
     position: fixed;
     right: 40px;
