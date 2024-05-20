@@ -1,12 +1,11 @@
-import { useTranslation } from "react-i18next";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { EffectCube, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 import { Section } from "../Section/Section";
-import { Text } from "../Text/Text";
 
 import styles from "./Faces.module.css";
 const images = [
@@ -18,12 +17,9 @@ const images = [
 ];
 
 export const Faces = () => {
-  const { t } = useTranslation();
   return (
     <Section fullHeight>
-      <Text tag="h1" variant={"title"}>
-        {t("faces.title")}
-      </Text>
+      <AnimatedTitle text={"faces.title"} />
       <section className={styles.wrapper}>
         <Swiper
           effect={"cube"}

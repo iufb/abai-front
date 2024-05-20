@@ -9,13 +9,12 @@ import { Text } from "../Text/Text";
 import styles from "./Unique.module.css";
 import { InViewContainer } from "../InViewContainer/InViewContainer";
 
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 export const Unique = () => {
   const { t } = useTranslation();
   return (
     <Section className={styles.wrapper}>
-      <Text tag="h1" variant={"title"}>
-        {t("unique.title")}
-      </Text>
+      <AnimatedTitle text={"unique.title"} />
       <Text
         className={styles.title}
         tag="h1"

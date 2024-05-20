@@ -7,14 +7,13 @@ import { Input } from "../Input/Input";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Admission.module.css";
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
   return (
     <Section id="admission" className={styles.wrapper}>
-      <Text tag={"h1"} variant={"title"}>
-        {t("admission.title")}
-      </Text>
+      <AnimatedTitle text={"admission.title"} />
       <section className={styles.content}>
         <section className={styles.tabs}>
           {t("admission.tabs", { returnObjects: true }).map(
@@ -30,7 +29,6 @@ export const Admission = () => {
         </section>
         <section className={styles.right}>{ShowContent(tab, t)}</section>
       </section>
-
       <Hint t={t} />
       <Text
         className={styles.admissionEnd}

@@ -23,7 +23,6 @@ const slideUp = {
 export const Hero = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
-  console.log(current);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => {

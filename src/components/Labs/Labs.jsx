@@ -7,14 +7,14 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelectedLang } from "../../utils";
+
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 import styles from "./Labs.module.css";
 export const Labs = () => {
   const { t } = useTranslation();
   return (
     <Section fullHeight>
-      <Text tag={"h2"} variant={"title"}>
-        {t("labs.title")}
-      </Text>
+      <AnimatedTitle text={"labs.title"} />
       <MainSlider t={t} />
     </Section>
   );

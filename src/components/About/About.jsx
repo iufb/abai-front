@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -7,7 +7,7 @@ import styles from "./About.module.css";
 import first from "/1.png";
 import second from "/2.png";
 import third from "/3.png";
-import { useRef } from "react";
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 const leftVariants = {
   offscreen: {
     x: -300,
@@ -58,10 +58,7 @@ export const About = () => {
               className={styles[s]}
             />
           ))}
-
-          <Text tag="h1" variant={"title"}>
-            {t("about.title")}
-          </Text>
+          <AnimatedTitle text={"about.title"} />
           <Text tag="h4" variant={"subtitle"} color="secondary">
             {t("about.subtitle")}
           </Text>

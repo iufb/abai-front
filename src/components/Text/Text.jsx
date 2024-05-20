@@ -1,18 +1,16 @@
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import styles from "./Text.module.css";
-export const Text = ({
-  tag,
-  color = "primary",
-  variant,
-  className,
-  children,
-  ...props
-}) => {
+import { forwardRef } from "react";
+export const Text = forwardRef(function Text(
+  { tag, color = "primary", variant, className, children, ...props },
+  ref,
+) {
   const Component = motion[tag];
 
   return (
     <Component
+      ref={ref}
       className={clsx(
         {
           title: styles.title,
@@ -33,4 +31,4 @@ export const Text = ({
       {children}
     </Component>
   );
-};
+});

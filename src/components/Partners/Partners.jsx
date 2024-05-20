@@ -4,6 +4,7 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 import styles from "./Partners.module.css";
 const logos = [
   { image: "/partners/astanahub.svg", name: "ASTANA HUB" },
@@ -28,9 +29,7 @@ export const Partners = () => {
   const { t } = useTranslation();
   return (
     <Section fullHeight className={styles.slider}>
-      <Text tag={"h2"} variant={"title"}>
-        {t("supports")}
-      </Text>
+      <AnimatedTitle text={"supports"} />
       <Swiper
         autoplay={{
           delay: 2500,

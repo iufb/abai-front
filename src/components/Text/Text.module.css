@@ -2,6 +2,7 @@
   font-size: 36px;
   margin: 20px 0;
   font-weight: bold;
+  position: relative;
 }
 .subtitle {
   font-size: 24px;

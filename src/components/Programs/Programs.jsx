@@ -6,14 +6,14 @@ import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Programs.module.css";
 import crop from "/crop.png";
+
+import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
 export const Programs = () => {
   const { t } = useTranslation();
 
   return (
     <Section fullHeight className={styles.wrapper}>
-      <Text tag="h1" variant={"title"}>
-        {t("program.title")}
-      </Text>
+      <AnimatedTitle text={"program.title"} />
       <section className={styles.programWrapper}>
         <Program t={t} variant={"junior"} />
         <Program t={t} variant={"middle"} />
@@ -44,9 +44,7 @@ const Program = ({ t, variant }) => (
 const SchoolFormat = ({ t }) => {
   return (
     <section className={styles.format}>
-      <Text tag="h2" variant={"title"} color="primary">
-        {t(`format.title`)}
-      </Text>
+      <AnimatedTitle text={"format.title"} />
       <Text tag="h4" variant={"subtitle"} color="secondary">
         {t(`format.first`)}
       </Text>
