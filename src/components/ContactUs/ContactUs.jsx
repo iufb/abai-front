@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../Button/Button";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Input } from "../Input/Input";
@@ -9,6 +9,7 @@ import { supabase } from "../../supabase";
 import { uploadFile } from "../../utils";
 import { useTranslation } from "react-i18next";
 import { Text } from "../Text/Text";
+import { useScroll, motion, useTransform } from "framer-motion";
 
 export const ContactUs = () => {
   const { t } = useTranslation();
@@ -55,6 +56,12 @@ const Form = ({ t }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [notification, setNotification] = useState("");
+  const formRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: formRef,
+    offset: ["0 0", "1 1"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
 
@@ -99,7 +106,13 @@ const Form = ({ t }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <motion.form
+      ref={formRef}
+      style={{ scale }}
+      className={styles.form}
+      onSubmit={handleSubmit}
+      transition={{ type: "spring" }}
+    >
       <div className={styles.formContent}>
         <div className={styles.formLeft}>
           <Input
@@ -199,6 +212,6 @@ const Form = ({ t }) => {
       <Button color="base" disabled={loading} type="submit" variant={"primary"}>
         {loading ? t("buttons.form.loading") : t("buttons.form.base")}
       </Button>
-    </form>
+    </motion.form>
   );
 };

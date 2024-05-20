@@ -11,7 +11,7 @@ export const Admission = () => {
   const [tab, setTab] = useState("how");
   const { t } = useTranslation();
   return (
-    <Section id="admission" fullHeight className={styles.wrapper}>
+    <Section id="admission" className={styles.wrapper}>
       <Text tag={"h1"} variant={"title"}>
         {t("admission.title")}
       </Text>
