@@ -2,9 +2,8 @@ import { useTranslation } from "react-i18next";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Section } from "../Section/Section";
-import { Text } from "../Text/Text";
 import { AnimatedTitle } from "../AnimatedTitle/AnimatedTitle";
+import { Section } from "../Section/Section";
 import styles from "./Partners.module.css";
 const logos = [
   { image: "/partners/astanahub.svg", name: "ASTANA HUB" },
@@ -42,7 +41,7 @@ export const Partners = () => {
         {logos.map((logo, idx) => (
           <SwiperSlide className={styles.slide} key={idx}>
             <div className={styles.logo}>
-              <img src={logo.image} />
+              <img src={logo.image} alt="logo.name" loading="lazy" />
             </div>
             <span>{idx == logos.length - 1 ? t(logo.name) : logo.name}</span>
           </SwiperSlide>

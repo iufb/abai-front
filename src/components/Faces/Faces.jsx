@@ -42,7 +42,7 @@ export const Faces = () => {
         >
           {new Array(5).fill(".").map((_, idx) => (
             <SwiperSlide className={styles.slide} key={idx}>
-              <img src={images[idx]} alt={`face ${idx + 1}`} />
+              <img loading="lazy" src={images[idx]} alt={`face ${idx + 1}`} />
             </SwiperSlide>
           ))}
         </Swiper>

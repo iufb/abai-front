@@ -126,6 +126,7 @@ const MainSlider = ({ t }) => {
             </Text>
             <div className={styles.imgContainer}>
               <img
+                loading="lazy"
                 src={lang ? lab.images.kz : lab.images.ru}
                 alt={`${lab.title}`}
               />

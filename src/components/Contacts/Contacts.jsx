@@ -22,7 +22,7 @@ export const Contacts = () => {
       <Text tag="h6" variant={"subsubtitle"} color="base">
         {t("footer.school")}
       </Text>
-      <Link href={"tel:+7 707 150 42 00"}>+7 (707) 150 42 00</Link>
+      <Link href={"tel:+7 708 938 3180"}>+7 708 938 3180</Link>
     </section>
   );
 };

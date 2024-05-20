@@ -37,7 +37,7 @@ const Program = ({ t, variant }) => (
       </ul>
     </section>
     <div className={styles.imgWrapper}>
-      <img src={crop} />
+      <img src={crop} alt="crop logo" />
     </div>
   </section>
 );

@@ -42,7 +42,7 @@ export const FloatButtons = () => {
         className={styles.up}
         aria-label="up button"
       >
-        <img src="/up.svg" />
+        <img src="/up.svg" alt="up icon" />
       </button>
     </>
   );

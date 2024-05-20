@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 
 import { useSelectedLang } from "../../utils";
 import { BurgerButton } from "../BurgerButton/BurgerButton";
-import logo from "/ais-logo-rs.png";
+import logo from "/ais-logo.webp";
 export const Navbar = () => {
   const { t } = useTranslation();
   return (

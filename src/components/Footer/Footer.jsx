@@ -59,6 +59,7 @@ const LeftFooter = ({ t }) => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.805704908305!2d80.2391162768642!3d50.407458490457934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42f2650035f62565%3A0xb248ffecb02fca17!2sAbai%20IT%20School!5e0!3m2!1sru!2skz!4v1715060522580!5m2!1sru!2skz"
           allowFullScreen=""
           loading="lazy"
+          title="Технологический кластер «Abai IT-Valley” - как добраться"
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
