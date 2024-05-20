@@ -1,4 +1,6 @@
 import { useTranslation } from "react-i18next";
+
+import { InViewContainer } from "../InViewContainer/InViewContainer";
 import { Button } from "../Button/Button";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -71,9 +73,11 @@ const Schedule = ({ t }) => {
 const GoSection = ({ t }) => {
   return (
     <section className={styles.go}>
-      <Text tag="h1" variant={"title"} color="base">
-        {t(`go`)}
-      </Text>
+      <InViewContainer>
+        <Text tag="h1" variant={"title"} color="base">
+          {t(`go`)}
+        </Text>
+      </InViewContainer>
       <Button href="#form" color="base" isLink variant={"outline"}>
         {t("buttons.go")}
       </Button>

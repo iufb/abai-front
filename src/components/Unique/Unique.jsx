@@ -7,8 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
 import styles from "./Unique.module.css";
-import { useRef } from "react";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { InViewContainer } from "../InViewContainer/InViewContainer";
 
 export const Unique = () => {
   const { t } = useTranslation();
@@ -17,19 +16,17 @@ export const Unique = () => {
       <Text tag="h1" variant={"title"}>
         {t("unique.title")}
       </Text>
-      <InViewContainer>
-        <Text
-          className={styles.title}
-          tag="h1"
-          color="secondary"
-          variant={"subtitle"}
-        >
-          {t("unique.about.title")}
-        </Text>
-        <Text tag="h1" color="primary" variant={"p"}>
-          {t("unique.about.body")}
-        </Text>
-      </InViewContainer>
+      <Text
+        className={styles.title}
+        tag="h1"
+        color="secondary"
+        variant={"subtitle"}
+      >
+        {t("unique.about.title")}
+      </Text>
+      <Text tag="h1" color="primary" variant={"p"}>
+        {t("unique.about.body")}
+      </Text>
       <Text tag="h2" color="secondary" variant={"subtitle"}>
         {t("unique.inProgram.title")}
       </Text>
@@ -101,34 +98,5 @@ const ProgramsSlider = ({ t }) => {
         </SwiperSlide>
       ))}
     </Swiper>
-  );
-};
-const InViewContainer = ({ children }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9]);
-  const y = useTransform(
-    scrollYProgress,
-    [0.1, 0.4, 0.7, 1],
-    ["0%", "20%", "-10%", "-10%"],
-  );
-  return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale,
-        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ",
-        y,
-        margin: "0 0 30px 0",
-        display: "flex",
-        flexDirection: "column",
-        gap: 10,
-      }}
-    >
-      {children}
-    </motion.div>
   );
 };
