@@ -40,11 +40,15 @@ export const Unique = () => {
             {t("unique.inProgram.and.1")}
           </Text>
         </section>
+      </InViewContainer>
+      <InViewContainer>
         <section className={styles.hint}>
           <Text tag="h2" color="primary" variant={"subtitle"}>
             {t("unique.inProgram.and.2")}
           </Text>
         </section>
+      </InViewContainer>
+      <InViewContainer>
         <section className={styles.hint}>
           <Text tag="h2" color="primary" variant={"subtitle"}>
             {t("unique.inProgram.and.3")}
