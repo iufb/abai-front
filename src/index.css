@@ -28,7 +28,7 @@ label {
 }
 :root {
   font-family: "Ubuntu", Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
+  scroll-behavior: smooth;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

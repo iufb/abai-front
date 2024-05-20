@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Section } from "../Section/Section";
 import { Text } from "../Text/Text";
@@ -107,6 +107,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
+      delay: 1,
       staggerChildren: 0.5,
     },
   },
