@@ -23,27 +23,23 @@ export const FloatButtons = () => {
     });
   };
   return (
-    <>
-      <a
-        style={{
-          opacity: opacity ? opacity : 0,
-        }}
-        className={styles.phone}
-        href={"tel:+7 708 938 3180"}
-      >
+    <div
+      className={styles.buttons}
+      style={{
+        opacity: opacity ? opacity : 0,
+      }}
+    >
+      <a className={styles.phone} href={"tel:+7 708 938 3180"}>
         <img className={styles.phoneIcon} src="/phone.svg" alt="call" />
       </a>
 
       <button
-        style={{
-          opacity: opacity ? opacity : 0,
-        }}
         onClick={scrollToTop}
         className={styles.up}
         aria-label="up button"
       >
         <img src="/up.svg" alt="up icon" />
       </button>
-    </>
+    </div>
   );
 };
