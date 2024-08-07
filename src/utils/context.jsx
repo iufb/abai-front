@@ -8,7 +8,7 @@ export const LangProvider = ({ children }) => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  const selectedLang = lang ? "kz" : "ru";
+  const selectedLang = lang ? "ru" : "kz";
   const notSelected = selectedLang == "kz" ? "ru" : "kz";
   useEffect(() => {
     changeLanguage(selectedLang);

@@ -18,8 +18,8 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: "ru", // default language
-    fallbackLng: "ru", // fallback language
+    lng: "kz", // default language
+    fallbackLng: "kz", // fallback language
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
