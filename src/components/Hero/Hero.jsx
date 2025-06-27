@@ -12,9 +12,7 @@ const slideUp = {
         y: 200,
     },
     visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
+        opacity: 1, y: 0, transition: {
             duration: 1.4,
             ease: "easeInOut",
         },
